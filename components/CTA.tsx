@@ -1,11 +1,38 @@
 "use client";
 
 import { motion, useInView } from "framer-motion";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 
 export default function CTA() {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-80px" });
+
+  const [form, setForm] = useState({ company: "", name: "", email: "", message: "" });
+  const [status, setStatus] = useState<"idle" | "sending" | "done" | "error">("idle");
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+  };
+
+  const handleSubmit = async () => {
+    if (!form.company || !form.name || !form.email) return;
+    setStatus("sending");
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      });
+      if (res.ok) {
+        setStatus("done");
+        setForm({ company: "", name: "", email: "", message: "" });
+      } else {
+        setStatus("error");
+      }
+    } catch {
+      setStatus("error");
+    }
+  };
 
   return (
     <section id="contact" ref={ref} className="py-28 md:py-48 bg-white relative overflow-hidden">
@@ -62,7 +89,7 @@ export default function CTA() {
           WELLTOPIAと共に、次の共創への扉を開きましょう。
         </motion.p>
 
-        {/* フォーム（シンプル版） */}
+        {/* フォーム */}
         <motion.div
           initial={{ opacity: 0, y: 32 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
@@ -71,67 +98,101 @@ export default function CTA() {
         >
           <h3 className="text-xl font-light text-[#0d2d52] mb-8">お問い合わせ・申込み</h3>
 
-          <div className="space-y-4 text-left">
-            <div>
-              <label className="text-xs tracking-wider text-[#9ca3af] block mb-1.5">
-                会社名 <span className="text-[#e53e3e]">*</span>
-              </label>
-              <input
-                type="text"
-                className="w-full px-4 py-3 rounded-xl border border-[#e5e7eb] text-[#374151] placeholder:text-[#d1d5db] focus:outline-none focus:border-[#1a4f8a]/50 focus:ring-2 focus:ring-[#1a4f8a]/10 transition-all text-sm"
-                placeholder="株式会社WELLTOPIA"
-              />
+          {status === "done" ? (
+            <div className="py-12 text-center">
+              <div className="w-12 h-12 rounded-full bg-[#e8f5f0] flex items-center justify-center mx-auto mb-4">
+                <svg className="w-6 h-6 text-[#2d8a6b]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M5 13l4 4L19 7" />
+                </svg>
+              </div>
+              <p className="text-[#0d2d52] font-light text-lg mb-2">送信が完了しました</p>
+              <p className="text-[#9ca3af] text-sm font-light">3営業日以内にご連絡いたします。</p>
             </div>
-            <div>
-              <label className="text-xs tracking-wider text-[#9ca3af] block mb-1.5">
-                お名前 <span className="text-[#e53e3e]">*</span>
-              </label>
-              <input
-                type="text"
-                className="w-full px-4 py-3 rounded-xl border border-[#e5e7eb] text-[#374151] placeholder:text-[#d1d5db] focus:outline-none focus:border-[#1a4f8a]/50 focus:ring-2 focus:ring-[#1a4f8a]/10 transition-all text-sm"
-                placeholder="山田 太郎"
-              />
-            </div>
-            <div>
-              <label className="text-xs tracking-wider text-[#9ca3af] block mb-1.5">
-                メールアドレス <span className="text-[#e53e3e]">*</span>
-              </label>
-              <input
-                type="email"
-                className="w-full px-4 py-3 rounded-xl border border-[#e5e7eb] text-[#374151] placeholder:text-[#d1d5db] focus:outline-none focus:border-[#1a4f8a]/50 focus:ring-2 focus:ring-[#1a4f8a]/10 transition-all text-sm"
-                placeholder="info@company.co.jp"
-              />
-            </div>
-            <div>
-              <label className="text-xs tracking-wider text-[#9ca3af] block mb-1.5">
-                ご興味・ご状況（任意）
-              </label>
-              <textarea
-                rows={3}
-                className="w-full px-4 py-3 rounded-xl border border-[#e5e7eb] text-[#374151] placeholder:text-[#d1d5db] focus:outline-none focus:border-[#1a4f8a]/50 focus:ring-2 focus:ring-[#1a4f8a]/10 transition-all text-sm resize-none"
-                placeholder="共創への関心や現在の取り組みなどをお気軽にお書きください"
-              />
-            </div>
-          </div>
+          ) : (
+            <>
+              <div className="space-y-4 text-left">
+                <div>
+                  <label className="text-xs tracking-wider text-[#9ca3af] block mb-1.5">
+                    会社名 <span className="text-[#e53e3e]">*</span>
+                  </label>
+                  <input
+                    type="text"
+                    name="company"
+                    value={form.company}
+                    onChange={handleChange}
+                    className="w-full px-4 py-3 rounded-xl border border-[#e5e7eb] text-[#374151] placeholder:text-[#d1d5db] focus:outline-none focus:border-[#1a4f8a]/50 focus:ring-2 focus:ring-[#1a4f8a]/10 transition-all text-sm"
+                    placeholder="株式会社WELLTOPIA"
+                  />
+                </div>
+                <div>
+                  <label className="text-xs tracking-wider text-[#9ca3af] block mb-1.5">
+                    お名前 <span className="text-[#e53e3e]">*</span>
+                  </label>
+                  <input
+                    type="text"
+                    name="name"
+                    value={form.name}
+                    onChange={handleChange}
+                    className="w-full px-4 py-3 rounded-xl border border-[#e5e7eb] text-[#374151] placeholder:text-[#d1d5db] focus:outline-none focus:border-[#1a4f8a]/50 focus:ring-2 focus:ring-[#1a4f8a]/10 transition-all text-sm"
+                    placeholder="山田 太郎"
+                  />
+                </div>
+                <div>
+                  <label className="text-xs tracking-wider text-[#9ca3af] block mb-1.5">
+                    メールアドレス <span className="text-[#e53e3e]">*</span>
+                  </label>
+                  <input
+                    type="email"
+                    name="email"
+                    value={form.email}
+                    onChange={handleChange}
+                    className="w-full px-4 py-3 rounded-xl border border-[#e5e7eb] text-[#374151] placeholder:text-[#d1d5db] focus:outline-none focus:border-[#1a4f8a]/50 focus:ring-2 focus:ring-[#1a4f8a]/10 transition-all text-sm"
+                    placeholder="info@company.co.jp"
+                  />
+                </div>
+                <div>
+                  <label className="text-xs tracking-wider text-[#9ca3af] block mb-1.5">
+                    ご興味・ご状況（任意）
+                  </label>
+                  <textarea
+                    name="message"
+                    value={form.message}
+                    onChange={handleChange}
+                    rows={3}
+                    className="w-full px-4 py-3 rounded-xl border border-[#e5e7eb] text-[#374151] placeholder:text-[#d1d5db] focus:outline-none focus:border-[#1a4f8a]/50 focus:ring-2 focus:ring-[#1a4f8a]/10 transition-all text-sm resize-none"
+                    placeholder="共創への関心や現在の取り組みなどをお気軽にお書きください"
+                  />
+                </div>
+              </div>
 
-          <button
-            type="button"
-            className="mt-8 w-full py-4 bg-[#1a4f8a] text-white text-sm tracking-[0.08em] font-medium rounded-2xl hover:bg-[#0d2d52] transition-all duration-300 shadow-lg shadow-[#1a4f8a]/20 group flex items-center justify-center gap-3"
-          >
-            <span>申込み内容を送信する</span>
-            <svg
-              className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-200"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-            </svg>
-          </button>
+              {status === "error" && (
+                <p className="mt-4 text-sm text-[#e53e3e] text-center">送信に失敗しました。時間をおいて再度お試しください。</p>
+              )}
 
-          <p className="text-center text-xs text-[#9ca3af] mt-4 font-light">
-            3営業日以内にご連絡いたします。まずはお気軽にご連絡ください。
-          </p>
+              <button
+                type="button"
+                onClick={handleSubmit}
+                disabled={status === "sending" || !form.company || !form.name || !form.email}
+                className="mt-8 w-full py-4 bg-[#1a4f8a] text-white text-sm tracking-[0.08em] font-medium rounded-2xl hover:bg-[#0d2d52] transition-all duration-300 shadow-lg shadow-[#1a4f8a]/20 group flex items-center justify-center gap-3 disabled:opacity-50 disabled:cursor-not-allowed"
+              >
+                <span>{status === "sending" ? "送信中..." : "申込み内容を送信する"}</span>
+                {status !== "sending" && (
+                  <svg
+                    className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-200"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                  </svg>
+                )}
+              </button>
+
+              <p className="text-center text-xs text-[#9ca3af] mt-4 font-light">
+                3営業日以内にご連絡いたします。まずはお気軽にご連絡ください。
+              </p>
+            </>
+          )}
         </motion.div>
 
         {/* ブランドメッセージ */}
