@@ -400,7 +400,7 @@ export default function DiagnosisResult() {
           transition={{ delay: 0.8, duration: 0.6 }}
           className="text-center text-[#9ca3af] text-sm font-light mt-10"
         >
-          このようなレポートが、診断後3〜4週間で手元に届きます。
+          このようなレポートが、診断後2週間以内に手元に届きます。
         </motion.p>
       </div>
     </section>

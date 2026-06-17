@@ -20,13 +20,13 @@ const steps = [
     step: "03",
     title: "診断実施",
     desc: "40問のオンライン設問と、WELLTOPIAアナリストによる補足インタビューを実施。",
-    duration: "1〜2週間",
+    duration: "約1週間",
   },
   {
     step: "04",
     title: "レポート作成",
-    desc: "5軸スコアの分析と、貴社固有のネクストアクション提言を含む詳細レポートを作成。",
-    duration: "1週間",
+    desc: "7軸スコアの分析と、貴社固有のネクストアクション提言を含む詳細レポートを作成。",
+    duration: "約1週間",
   },
   {
     step: "05",
@@ -107,7 +107,7 @@ export default function ServiceFlow() {
         >
           <div>
             <p className="text-xs text-[#9ca3af] tracking-wider">TOTAL DURATION</p>
-            <p className="text-2xl font-light text-[#0d2d52] mt-0.5">約3〜4週間</p>
+            <p className="text-2xl font-light text-[#0d2d52] mt-0.5">2週間以内</p>
           </div>
           <div className="w-px h-10 bg-[#e5e7eb]" />
           <p className="text-sm text-[#6b7280] font-light max-w-[200px]">
