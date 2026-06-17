@@ -16,7 +16,6 @@ export default function Hero() {
     <section className="relative min-h-screen flex flex-col justify-center overflow-hidden bg-white">
       {/* 背景装飾 */}
       <div className="absolute inset-0 pointer-events-none">
-        {/* グリッド */}
         <div
           className="absolute inset-0 opacity-[0.03]"
           style={{
@@ -25,11 +24,8 @@ export default function Hero() {
             backgroundSize: "64px 64px",
           }}
         />
-        {/* 右上の光 */}
         <div className="absolute -top-40 -right-40 w-[600px] h-[600px] rounded-full bg-gradient-to-br from-[#e8f0fb] to-transparent opacity-60" />
-        {/* 左下の光 */}
         <div className="absolute -bottom-20 -left-20 w-[400px] h-[400px] rounded-full bg-gradient-to-tr from-[#e8f5f0] to-transparent opacity-40" />
-        {/* 有機的な円弧 */}
         <svg
           className="absolute top-0 right-0 w-1/2 h-full opacity-[0.06]"
           viewBox="0 0 600 900"
@@ -58,14 +54,31 @@ export default function Hero() {
           </div>
           <div className="h-px w-8 bg-[#1a4f8a] opacity-40" />
           <span className="text-xs tracking-[0.15em] text-[#6b7280]">
-            共創マネジメント診断
+            共創マネジメント事業
           </span>
+        </motion.div>
+
+        {/* 問題提起コピー */}
+        <motion.div
+          className="mb-12 max-w-2xl"
+          custom={1}
+          initial="hidden"
+          animate="show"
+          variants={fadeUp}
+        >
+          <p className="text-[clamp(1rem,2vw,1.25rem)] text-[#374151] font-light leading-[1.9] border-l-2 border-[#1a4f8a]/30 pl-6">
+            新規事業、協業、オープンイノベーション。
+            <br />
+            なぜ成果につながる企業と途中で止まる企業があるのか。
+            <br />
+            <span className="text-[#0d2d52] font-normal">その違いは、共創する力にあります。</span>
+          </p>
         </motion.div>
 
         {/* メインタイトル */}
         <motion.h1
           className="text-[clamp(2.5rem,7vw,5.5rem)] font-light leading-[1.1] tracking-[-0.02em] text-[#0d2d52] mb-8"
-          custom={1}
+          custom={2}
           initial="hidden"
           animate="show"
           variants={fadeUp}
@@ -79,20 +92,20 @@ export default function Hero() {
         {/* サブコピー */}
         <motion.p
           className="text-[clamp(1rem,2vw,1.375rem)] text-[#374151] font-light leading-relaxed mb-14 max-w-xl"
-          custom={2}
+          custom={3}
           initial="hidden"
           animate="show"
           variants={fadeUp}
         >
           自社の共創力を可視化し、
           <br className="hidden sm:block" />
-          次の成長につなげる。
+          共創マネジメント事業の入口として活用する。
         </motion.p>
 
         {/* CTAボタン群 */}
         <motion.div
           className="flex flex-col sm:flex-row gap-4"
-          custom={3}
+          custom={4}
           initial="hidden"
           animate="show"
           variants={fadeUp}
@@ -122,13 +135,13 @@ export default function Hero() {
         {/* 数字メトリクス */}
         <motion.div
           className="mt-20 pt-12 border-t border-[#e5e7eb] grid grid-cols-3 gap-8 max-w-2xl"
-          custom={4}
+          custom={5}
           initial="hidden"
           animate="show"
           variants={fadeUp}
         >
           {[
-            { num: "5", unit: "領域", label: "診断軸" },
+            { num: "7", unit: "領域", label: "診断軸" },
             { num: "40", unit: "問", label: "設問数" },
             { num: "2", unit: "ルート", label: "成長パス" },
           ].map((item) => (

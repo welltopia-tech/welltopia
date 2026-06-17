@@ -4,7 +4,7 @@ import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 
 const includes = [
-  "5軸診断レポート（PDF・全30〜50ページ）",
+  "7軸診断レポート（PDF・全30〜50ページ）",
   "スコア詳細解説と業界比較",
   "ネクストアクション提言書",
   "90分フィードバックセッション（オンライン）",
@@ -46,8 +46,8 @@ export default function Pricing() {
               通常価格
             </div>
             <div className="flex items-baseline gap-1 mb-6">
-              <span className="text-4xl md:text-5xl font-light text-[#6b7280]">30</span>
-              <span className="text-xl text-[#6b7280]">万円</span>
+              <span className="text-4xl md:text-5xl font-light text-[#6b7280]">300,000</span>
+              <span className="text-xl text-[#6b7280]">円</span>
               <span className="text-sm text-[#9ca3af] ml-1">（税別）</span>
             </div>
             <div className="h-px bg-[#e5e7eb] mb-6" />
@@ -63,7 +63,7 @@ export default function Pricing() {
             </ul>
           </motion.div>
 
-          {/* モニター価格 */}
+          {/* 共創基準構築パートナー価格 */}
           <motion.div
             initial={{ opacity: 0, y: 32 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
@@ -73,7 +73,7 @@ export default function Pricing() {
             {/* バッジ */}
             <div className="absolute top-0 right-0">
               <div className="bg-[#1a4f8a] text-white text-xs tracking-[0.1em] font-medium px-5 py-2 rounded-bl-2xl rounded-tr-3xl">
-                モニター限定
+                限定募集中
               </div>
             </div>
 
@@ -82,19 +82,20 @@ export default function Pricing() {
             <div className="absolute -top-6 -left-6 w-32 h-32 rounded-full bg-[#e8f5f0] opacity-40" />
 
             <div className="relative">
-              <div className="text-xs tracking-[0.2em] text-[#1a4f8a] uppercase font-medium mb-4">
-                モニター価格
+              <div className="text-xs tracking-[0.15em] text-[#1a4f8a] font-medium mb-1">
+                共創基準構築パートナー価格
               </div>
+              <div className="text-[10px] tracking-[0.1em] text-[#9ca3af] mb-4">CO-CREATION PARTNER PRICE</div>
               <div className="flex items-baseline gap-1 mb-1">
-                <span className="text-4xl md:text-5xl font-light text-[#0d2d52]">15</span>
-                <span className="text-xl text-[#0d2d52]">万円</span>
+                <span className="text-4xl md:text-5xl font-light text-[#0d2d52]">150,000</span>
+                <span className="text-xl text-[#0d2d52]">円</span>
                 <span className="text-sm text-[#9ca3af] ml-1">（税別）</span>
               </div>
               <div className="flex items-center gap-2 mb-6">
                 <span className="text-xs text-[#2d8a6b] bg-[#e8f5f0] px-2 py-0.5 rounded-full font-medium">
-                  50% OFF
+                  特別価格
                 </span>
-                <span className="text-xs text-[#9ca3af]">通常30万円から</span>
+                <span className="text-xs text-[#9ca3af]line-through">通常 300,000円</span>
               </div>
 
               <div className="h-px bg-[#1a4f8a]/10 mb-6" />
@@ -114,11 +115,11 @@ export default function Pricing() {
                 href="#contact"
                 className="block w-full text-center py-4 bg-[#1a4f8a] text-white text-sm tracking-[0.08em] font-medium rounded-2xl hover:bg-[#0d2d52] transition-colors duration-300 shadow-lg shadow-[#1a4f8a]/20"
               >
-                モニターとして申し込む
+                パートナーとして申し込む
               </a>
 
               <p className="text-center text-xs text-[#9ca3af] mt-3">
-                ※ モニター枠は残りわずかです
+                ※ 共創基準構築パートナー枠は残りわずかです
               </p>
             </div>
           </motion.div>
