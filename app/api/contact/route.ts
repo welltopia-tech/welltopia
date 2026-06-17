@@ -23,7 +23,7 @@ export async function POST(req: Request) {
 
     await sheets.spreadsheets.values.append({
       spreadsheetId: process.env.GOOGLE_SPREADSHEET_ID,
-      range: "シート1!A:E",
+      range: "sheet1!A:E",
       valueInputOption: "USER_ENTERED",
       requestBody: {
         values: [[timestamp, company, name, email, message || ""]],
