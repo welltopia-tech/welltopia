@@ -51,13 +51,39 @@ export async function POST(req: Request) {
           </p>
 
           <p style="font-size: 15px; line-height: 1.8; color: #374151; font-weight: 300; margin: 0 0 24px;">
-            このたびはWELLTOPIA 共創力診断にお申込みいただき、<br>
-            誠にありがとうございます。
+            このたびは、WELLTOPIAの「共創力診断」にお申込みいただき、ありがとうございます。
           </p>
 
-          <p style="font-size: 15px; line-height: 1.8; color: #374151; font-weight: 300; margin: 0 0 40px;">
-            次のステップとして、担当者との商談日程をご調整ください。<br>
-            以下のURLより、ご都合のよい日時をお選びいただけます。
+          <p style="font-size: 15px; line-height: 1.8; color: #374151; font-weight: 300; margin: 0 0 24px;">
+            新しい成長の糸口を探すうえで、自社だけでは生み出せない価値を、誰と、どのようにつくっていくのか。
+          </p>
+
+          <p style="font-size: 15px; line-height: 1.8; color: #374151; font-weight: 300; margin: 0 0 24px;">
+            共創力診断では、現在の共創に向けた準備状況や強み、これから整えていくべきポイントを可視化し、次の一歩を具体的にしていきます。
+          </p>
+
+          <p style="font-size: 15px; line-height: 1.8; color: #374151; font-weight: 300; margin: 0 0 24px;">
+            診断に先立ち、${name} 様が現在感じている課題や、実現したい構想についてお伺いするため、30分ほどの事前ヒアリングを実施しています。
+          </p>
+
+          <p style="font-size: 15px; line-height: 1.8; color: #374151; font-weight: 300; margin: 0 0 24px;">
+            まだ構想が整理されていない段階でも問題ありません。
+          </p>
+
+          <div style="background: #f8f9fa; border-left: 3px solid #1a4f8a; border-radius: 0 12px 12px 0; padding: 20px 24px; margin: 0 0 32px;">
+            <p style="font-size: 14px; line-height: 2; color: #374151; font-weight: 300; margin: 0;">
+              「新しい事業の可能性を探している」<br>
+              「社外との連携を進めたいが、進め方が分からない」<br>
+              「自社の強みを、別の価値につなげたい」
+            </p>
+          </div>
+
+          <p style="font-size: 15px; line-height: 1.8; color: #374151; font-weight: 300; margin: 0 0 32px;">
+            といった状況も含め、現在地から一緒に整理させていただきます。
+          </p>
+
+          <p style="font-size: 15px; line-height: 1.8; color: #374151; font-weight: 300; margin: 0 0 24px;">
+            下記より、ご都合のよい日時をお選びください。
           </p>
 
           <div style="text-align: center; margin: 0 0 40px;">
@@ -65,7 +91,7 @@ export async function POST(req: Request) {
                style="display: inline-block; background: #1a4f8a; color: white; text-decoration: none;
                       font-size: 14px; letter-spacing: 0.08em; font-weight: 500;
                       padding: 16px 40px; border-radius: 100px;">
-              商談日程を予約する →
+              事前ヒアリングの日程を予約する →
             </a>
           </div>
 
@@ -76,11 +102,6 @@ export async function POST(req: Request) {
             <p style="font-size: 14px; color: #374151; margin: 4px 0;">メール：${email}</p>
             ${message ? `<p style="font-size: 14px; color: #374151; margin: 4px 0;">ご状況：${message}</p>` : ""}
           </div>
-
-          <p style="font-size: 13px; line-height: 1.8; color: #9ca3af; font-weight: 300; margin: 0 0 40px;">
-            ご不明な点がございましたら、このメールにご返信ください。<br>
-            担当者より改めてご連絡いたします。
-          </p>
 
           <div style="border-top: 1px solid #e5e7eb; padding-top: 24px;">
             <p style="font-size: 12px; color: #9ca3af; margin: 0;">WELLTOPIA</p>
