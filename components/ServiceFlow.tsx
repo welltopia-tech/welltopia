@@ -7,26 +7,26 @@ const steps = [
   {
     step: "01",
     title: "診断申込み",
-    desc: "フォームより申込み。担当者より3営業日以内にご連絡します。",
-    duration: "1〜3日",
+    desc: "フォームより申込み。担当者より3営業日以内に日程調整のご連絡をします。",
+    duration: "3営業日以内",
   },
   {
     step: "02",
     title: "ヒアリング",
-    desc: "オンラインにて1時間のキックオフヒアリング。貴社のビジョンと現状を深く伺います。",
+    desc: "オンラインにて60分の個別ヒアリング。貴社のビジョンと現状を深く伺います。",
     duration: "60分",
   },
   {
     step: "03",
-    title: "診断実施",
-    desc: "40問のオンライン設問と、WELLTOPIAアナリストによる補足インタビューを実施。",
-    duration: "約1週間",
+    title: "診断回答",
+    desc: "7領域・40問のオンライン設問にご回答いただきます。複数の従業員での回答も可能です。",
+    duration: "オンライン",
   },
   {
     step: "04",
     title: "レポート作成",
-    desc: "7軸スコアの分析と、貴社固有のネクストアクション提言を含む詳細レポートを作成。",
-    duration: "約1週間",
+    desc: "7領域スコアの分析と、貴社固有の次の一手の提言を含む詳細レポートを作成。回答完了後2週間以内にお届けします。",
+    duration: "2週間以内",
   },
   {
     step: "05",
@@ -41,7 +41,7 @@ export default function ServiceFlow() {
   const inView = useInView(ref, { once: true, margin: "-80px" });
 
   return (
-    <section ref={ref} className="py-28 md:py-40 bg-[#f8f9fa]">
+    <section id="flow" ref={ref} className="py-28 md:py-40 bg-[#f8f9fa]">
       <div className="max-w-6xl mx-auto px-6 md:px-12">
         {/* ヘッダー */}
         <motion.div
@@ -107,11 +107,11 @@ export default function ServiceFlow() {
         >
           <div>
             <p className="text-xs text-[#9ca3af] tracking-wider">TOTAL DURATION</p>
-            <p className="text-2xl font-light text-[#0d2d52] mt-0.5">2週間以内</p>
+            <p className="text-2xl font-light text-[#0d2d52] mt-0.5">診断回答完了後2週間以内</p>
           </div>
           <div className="w-px h-10 bg-[#e5e7eb]" />
           <p className="text-sm text-[#6b7280] font-light max-w-[200px]">
-            申込みから最終フィードバックまで
+            回答完了からレポート・フィードバックまで
           </p>
         </motion.div>
       </div>

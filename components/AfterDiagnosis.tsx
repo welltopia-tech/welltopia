@@ -3,38 +3,53 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 
-const paths = [
+const stages = [
   {
-    type: "共創準備企業",
-    typeEn: "CO-CREATION READY",
-    score: "〜69点",
-    color: "#1a7a9a",
-    bg: "#e8f4f8",
-    border: "#1a7a9a",
-    next: "共創力育成プログラム",
-    nextEn: "Co-Creation Development",
-    desc: "共創の土台をつくる段階。WELLTOPIAと共に7つの基準を体系的に強化し、共創できる組織へ変革します。",
-    actions: [
-      "共創基準ギャップ分析",
-      "組織文化・マインドセット変革支援",
-      "共創パートナー候補の探索・接触",
-    ],
+    name: "共創基盤形成",
+    en: "Foundation",
+    range: "0–49",
+    desc: "共創の土台をこれからつくる段階。目的や社内の足並みを整えることから始めます。",
+    color: "#6b7280",
   },
   {
-    type: "共創実装企業",
-    typeEn: "CO-CREATION ACTIVE",
-    score: "70点以上",
+    name: "共創準備",
+    en: "Preparation",
+    range: "50–69",
+    desc: "共創に向けた素地が育ちつつある段階。強みを言語化し、相手を選ぶ力を高めます。",
+    color: "#1a7a9a",
+  },
+  {
+    name: "共創実装",
+    en: "Implementation",
+    range: "70–84",
+    desc: "共創を具体的なプロジェクトとして動かせる段階。実証から事業実装へ踏み出します。",
+    color: "#2d6cb5",
+  },
+  {
+    name: "共創展開",
+    en: "Expansion",
+    range: "85–100",
+    desc: "共創を継続的な成長エンジンにできる段階。経験を次の共創へとつなげていきます。",
+    color: "#1a4f8a",
+  },
+];
+
+const routes = [
+  {
+    title: "共創力を高める",
+    en: "Strengthen",
+    color: "#2d8a6b",
+    bg: "#e8f5f0",
+    desc: "土台や準備の段階にある企業へ。7領域のうち、いま伸ばすべき力にしぼって、共創できる組織づくりを支援します。",
+    points: ["共創基準のギャップ整理", "目的・強みの言語化支援", "社内の巻き込み・関係づくり"],
+  },
+  {
+    title: "共創を実装する",
+    en: "Implement",
     color: "#1a4f8a",
     bg: "#e8f0fb",
-    border: "#1a4f8a",
-    next: "共創プロジェクト設計",
-    nextEn: "Co-Creation Project Design",
-    desc: "共創を実行する段階。具体的なプロジェクト設計からパートナーシップ構築まで、WELLTOPIAが伴走します。",
-    actions: [
-      "共創プロジェクト企画・設計支援",
-      "産官学パートナーとのマッチング",
-      "共創マネジメント体制の構築",
-    ],
+    desc: "実装・展開の段階にある企業へ。具体的なプロジェクト設計からパートナーとの連携まで、共創を成果に変える歩みに伴走します。",
+    points: ["共創プロジェクトの企画・設計", "パートナーとのマッチング", "共創マネジメント体制づくり"],
   },
 ];
 
@@ -64,7 +79,7 @@ export default function AfterDiagnosis() {
           initial={{ opacity: 0, y: 24 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.7 }}
-          className="text-center mb-20"
+          className="text-center mb-16"
         >
           <span className="text-xs tracking-[0.3em] text-[#6b9fda] uppercase font-medium">
             After Diagnosis
@@ -72,66 +87,68 @@ export default function AfterDiagnosis() {
           <h2 className="mt-4 text-[clamp(1.75rem,4vw,2.75rem)] font-light text-white leading-tight">
             診断は、終わりではなく
             <br />
-            次の成長への始まりです。
+            次の一歩の始まりです。
           </h2>
           <p className="mt-6 text-[#6b9fda] font-light text-base max-w-xl mx-auto leading-relaxed">
-            スコアに応じて、WELLTOPIAが最適な共創の次のステップを提案します。
+            スコアは合否ではなく、いまの段階を映すものです。
+            状況に合わせて、WELLTOPIAが次の一手をご提案します。
           </p>
         </motion.div>
 
-        {/* 2つのパス */}
-        <div className="grid md:grid-cols-2 gap-6 mb-16">
-          {paths.map((path, i) => (
+        {/* 4ステージ */}
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-16">
+          {stages.map((s, i) => (
             <motion.div
-              key={path.type}
-              initial={{ opacity: 0, y: 32 }}
+              key={s.name}
+              initial={{ opacity: 0, y: 24 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
-              transition={{ delay: 0.15 + i * 0.15, duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-              className="rounded-3xl bg-white/5 border border-white/10 p-8 md:p-10 backdrop-blur-sm"
+              transition={{ delay: 0.1 + i * 0.1, duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+              className="rounded-3xl bg-white/5 border border-white/10 p-6 backdrop-blur-sm"
             >
-              {/* タイプバッジ */}
-              <div className="flex items-center justify-between mb-8">
-                <div>
-                  <p className="text-[10px] tracking-[0.3em] font-medium mb-1" style={{ color: path.color === "#1a4f8a" ? "#6b9fda" : "#7ec8d8" }}>
-                    {path.typeEn}
-                  </p>
-                  <h3 className="text-white text-xl font-light">{path.type}</h3>
-                </div>
-                <span className="text-xs text-white/50 border border-white/10 px-3 py-1 rounded-full">
-                  {path.score}
+              <div className="flex items-center gap-2 mb-3">
+                <div className="w-2 h-2 rounded-full" style={{ backgroundColor: s.color }} />
+                <span className="text-[10px] tracking-[0.2em] uppercase font-medium text-white/50">
+                  {s.en}
                 </span>
               </div>
+              <p className="text-xs font-mono text-[#6b9fda] mb-1">{s.range}</p>
+              <h3 className="text-white text-base font-medium mb-2">{s.name}</h3>
+              <p className="text-white/55 text-xs font-light leading-relaxed">{s.desc}</p>
+            </motion.div>
+          ))}
+        </div>
 
-              {/* 矢印 + NEXT */}
-              <div className="flex items-center gap-3 mb-6">
-                <div className="flex-1 h-px bg-white/10" />
-                <svg className="w-4 h-4 text-white/30" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-                </svg>
-                <div className="flex-1 h-px bg-white/10" />
-              </div>
+        {/* 2つの支援ルート */}
+        <motion.p
+          initial={{ opacity: 0 }}
+          animate={inView ? { opacity: 1 } : {}}
+          transition={{ delay: 0.4, duration: 0.6 }}
+          className="text-center text-white/40 text-xs tracking-[0.2em] uppercase mb-8"
+        >
+          状況に合わせた、2つの支援ルート
+        </motion.p>
 
-              {/* NEXT ACTION */}
-              <div
-                className="rounded-2xl p-5 mb-6"
-                style={{ backgroundColor: path.bg, borderLeft: `3px solid ${path.border}` }}
-              >
-                <p className="text-[10px] tracking-[0.25em] font-medium mb-1" style={{ color: path.color }}>
-                  {path.nextEn}
+        <div className="grid md:grid-cols-2 gap-6">
+          {routes.map((r, i) => (
+            <motion.div
+              key={r.title}
+              initial={{ opacity: 0, y: 28 }}
+              animate={inView ? { opacity: 1, y: 0 } : {}}
+              transition={{ delay: 0.45 + i * 0.15, duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+              className="rounded-3xl bg-white/5 border border-white/10 p-8 md:p-10 backdrop-blur-sm"
+            >
+              <div className="rounded-2xl p-5 mb-6" style={{ backgroundColor: r.bg, borderLeft: `3px solid ${r.color}` }}>
+                <p className="text-[10px] tracking-[0.25em] font-medium mb-1" style={{ color: r.color }}>
+                  {r.en}
                 </p>
-                <p className="text-[#0d2d52] font-medium text-base">{path.next}</p>
+                <p className="text-[#0d2d52] font-medium text-lg">{r.title}</p>
               </div>
-
-              <p className="text-white/60 font-light text-sm leading-relaxed mb-6">
-                {path.desc}
-              </p>
-
-              {/* アクションリスト */}
+              <p className="text-white/60 font-light text-sm leading-relaxed mb-6">{r.desc}</p>
               <ul className="space-y-2.5">
-                {path.actions.map((action) => (
-                  <li key={action} className="flex items-start gap-3">
+                {r.points.map((p) => (
+                  <li key={p} className="flex items-start gap-3">
                     <div className="flex-shrink-0 w-1 h-1 rounded-full bg-white/30 mt-2" />
-                    <span className="text-white/70 text-sm font-light">{action}</span>
+                    <span className="text-white/70 text-sm font-light">{p}</span>
                   </li>
                 ))}
               </ul>
@@ -139,22 +156,14 @@ export default function AfterDiagnosis() {
           ))}
         </div>
 
-        {/* 底部メッセージ */}
-        <motion.div
+        <motion.p
           initial={{ opacity: 0, y: 16 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ delay: 0.5, duration: 0.7 }}
-          className="text-center"
+          transition={{ delay: 0.7, duration: 0.7 }}
+          className="mt-12 text-center text-white/60 font-light text-sm"
         >
-          <div className="inline-flex items-center gap-4 text-white/40 text-xs tracking-[0.2em] uppercase">
-            <div className="h-px w-12 bg-white/20" />
-            <span>診断から始まる共創の旅</span>
-            <div className="h-px w-12 bg-white/20" />
-          </div>
-          <p className="mt-6 text-white/60 font-light text-sm">
-            どのステージからでも、WELLTOPIAは共に歩みます。
-          </p>
-        </motion.div>
+          どのステージからでも、WELLTOPIAは共に歩みます。
+        </motion.p>
       </div>
     </section>
   );

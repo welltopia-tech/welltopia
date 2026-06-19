@@ -3,7 +3,7 @@
 @theme {
   --color-wt-blue: #1a4f8a;
   --color-wt-blue-light: #2d6cb5;
-  --color-wt-blue-pale: #e8f0fb;
+  --color-wt-blue-pale: #f0f4fb;
   --color-wt-navy: #0d2d52;
   --color-wt-green: #2d8a6b;
   --color-wt-green-light: #e8f5f0;
@@ -11,11 +11,12 @@
   --color-wt-gray-light: #f8f9fa;
   --color-wt-border: #e5e7eb;
 
-  --font-sans: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+  --font-sans: var(--font-noto-sans-jp), "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
 }
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 80px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -29,4 +30,17 @@ body {
 ::selection {
   background-color: #1a4f8a22;
   color: #1a4f8a;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
 }

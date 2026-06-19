@@ -1,16 +1,31 @@
 import type { Metadata } from "next";
+import { Noto_Sans_JP } from "next/font/google";
 import "./globals.css";
 
+const notoSansJP = Noto_Sans_JP({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "700"],
+  display: "swap",
+  variable: "--font-noto-sans-jp",
+});
+
 export const metadata: Metadata = {
-  title: "WELLTOPIA 共創力診断 | 自社の共創力を可視化する",
+  title: "WELLTOPIA 共創力診断｜企業の共創力を7領域から可視化",
   description:
-    "自社の共創力を可視化し、次の成長につなげる。企業の共創マネジメント力を科学的に診断し、未来の共創パートナーへの道を開きます。",
+    "共創力、測ってる？ WELLTOPIAの共創力診断は、外部企業との連携力と従業員との共創力を7領域から可視化し、企業の強み・課題・次の一手を明らかにします。",
   openGraph: {
-    title: "WELLTOPIA 共創力診断",
-    description: "自社の共創力を可視化し、次の成長につなげる。",
+    title: "WELLTOPIA 共創力診断｜企業の共創力を7領域から可視化",
+    description:
+      "共創力、測ってる？ WELLTOPIAの共創力診断は、外部企業との連携力と従業員との共創力を7領域から可視化し、企業の強み・課題・次の一手を明らかにします。",
     siteName: "WELLTOPIA",
     locale: "ja_JP",
     type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "WELLTOPIA 共創力診断｜企業の共創力を7領域から可視化",
+    description:
+      "共創力、測ってる？ 外部企業との連携力と従業員との共創力を7領域から可視化します。",
   },
 };
 
@@ -20,7 +35,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="ja">
+    <html lang="ja" className={notoSansJP.variable}>
       <body>{children}</body>
     </html>
   );

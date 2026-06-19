@@ -63,19 +63,19 @@ export default function Diagnosis() {
     <section id="diagnosis" ref={ref} className="py-28 md:py-40 bg-white">
       <div className="max-w-6xl mx-auto px-6 md:px-12">
         {/* ヘッダー */}
-        <div className="grid md:grid-cols-2 gap-16 mb-16">
+        <div className="grid md:grid-cols-2 gap-16 mb-12">
           <motion.div
             initial={{ opacity: 0, y: 24 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.7 }}
           >
             <span className="text-xs tracking-[0.3em] text-[#1a4f8a] uppercase font-medium">
-              Diagnosis Framework
+              Co-Creation Assessment
             </span>
             <h2 className="mt-4 text-[clamp(1.75rem,4vw,2.75rem)] font-light text-[#0d2d52] leading-tight">
-              WELLTOPIA
+              共創力を、
               <br />
-              Co-Creation Standard
+              感覚のままにしない。
             </h2>
             <p className="mt-4 text-xs tracking-[0.2em] text-[#9ca3af] uppercase font-medium border border-[#e5e7eb] inline-block px-3 py-1.5 rounded-full mt-6">
               独自共創基準 7領域
@@ -87,10 +87,32 @@ export default function Diagnosis() {
             transition={{ duration: 0.7, delay: 0.15 }}
             className="text-[#6b7280] font-light leading-loose self-end text-base md:text-lg"
           >
-            WELLTOPIAが共創プロジェクトの実践知から設計した独自基準。
-            7つの領域から企業の共創マネジメント力を多角的に評価します。
+            これまで感覚や個人の経験で語られてきた共創力を、WELLTOPIAが共創プロジェクトの実践知から設計した独自基準で可視化します。
+            7つの領域から、企業が共創を成果に変える力を多角的に評価します。
           </motion.p>
         </div>
+
+        {/* 基本情報 */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.7, delay: 0.2 }}
+          className="mb-14 grid grid-cols-2 md:grid-cols-4 gap-3"
+        >
+          {[
+            { v: "7領域", l: "独自共創基準" },
+            { v: "40問", l: "オンライン回答" },
+            { v: "60分", l: "個別ヒアリング" },
+            { v: "PDF", l: "診断レポート" },
+            { v: "90分", l: "フィードバック" },
+            { v: "2週間以内", l: "レポート納品" },
+          ].map((item) => (
+            <div key={item.l} className="rounded-2xl border border-[#e5e7eb] bg-[#f8f9fa] px-4 py-4 text-center">
+              <p className="text-lg font-medium text-[#1a4f8a]">{item.v}</p>
+              <p className="text-xs text-[#9ca3af] font-light mt-1">{item.l}</p>
+            </div>
+          ))}
+        </motion.div>
 
         {/* 診断軸リスト */}
         <div className="space-y-0">

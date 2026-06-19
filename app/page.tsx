@@ -1,29 +1,41 @@
+import Header from "@/components/Header";
 import Hero from "@/components/Hero";
-import DiagnosisResult from "@/components/DiagnosisResult";
-import Problem from "@/components/Problem";
+import WhyNow from "@/components/WhyNow";
+import CoCreationGap from "@/components/CoCreationGap";
+import ExternalComparison from "@/components/ExternalComparison";
+import InternalComparison from "@/components/InternalComparison";
+import ConnectionSection from "@/components/ConnectionSection";
+import TypeMatrix from "@/components/TypeMatrix";
 import Diagnosis from "@/components/Diagnosis";
-import ScoreSection from "@/components/ScoreSection";
-import RouteSection from "@/components/RouteSection";
-import ServiceFlow from "@/components/ServiceFlow";
+import DiagnosisResult from "@/components/DiagnosisResult";
 import AfterDiagnosis from "@/components/AfterDiagnosis";
+import ServiceFlow from "@/components/ServiceFlow";
 import Pricing from "@/components/Pricing";
 import FAQ from "@/components/FAQ";
 import CTA from "@/components/CTA";
+import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
-    <main>
-      <Hero />
-      <DiagnosisResult />
-      <Problem />
-      <Diagnosis />
-      <ScoreSection />
-      <RouteSection />
-      <ServiceFlow />
-      <AfterDiagnosis />
-      <Pricing />
-      <FAQ />
-      <CTA />
-    </main>
+    <>
+      <Header />
+      <main>
+        <Hero />
+        <WhyNow />
+        <CoCreationGap />
+        <ExternalComparison />
+        <InternalComparison />
+        <ConnectionSection />
+        <TypeMatrix />
+        <Diagnosis />
+        <DiagnosisResult />
+        <AfterDiagnosis />
+        <ServiceFlow />
+        <Pricing />
+        <FAQ />
+        <CTA />
+      </main>
+      <Footer />
+    </>
   );
 }

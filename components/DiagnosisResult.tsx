@@ -1,16 +1,60 @@
 "use client";
 
-import { motion, useInView } from "framer-motion";
+import { motion, useInView, AnimatePresence } from "framer-motion";
 import { useRef, useEffect, useState } from "react";
 
+function DetailAccordion() {
+  const [open, setOpen] = useState<number | null>(0);
+  return (
+    <div className="rounded-2xl border border-[#e5e7eb] overflow-hidden">
+      {details.map((d, i) => (
+        <div key={d.label} className="border-b border-[#e5e7eb] last:border-b-0">
+          <button
+            type="button"
+            onClick={() => setOpen(open === i ? null : i)}
+            aria-expanded={open === i}
+            className="w-full flex items-center justify-between gap-3 px-5 py-4 text-left hover:bg-[#f8f9fa] transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[#1a4f8a]/30"
+          >
+            <span className="flex items-center gap-3">
+              <span className="text-sm font-medium text-[#0d2d52]">{d.label}</span>
+              <span className="text-xs font-mono text-[#1a4f8a]">{d.score}</span>
+            </span>
+            <svg
+              className={`w-4 h-4 text-[#1a4f8a] transition-transform ${open === i ? "rotate-180" : ""}`}
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+          <AnimatePresence>
+            {open === i && (
+              <motion.div
+                initial={{ height: 0, opacity: 0 }}
+                animate={{ height: "auto", opacity: 1 }}
+                exit={{ height: 0, opacity: 0 }}
+                transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
+                className="overflow-hidden"
+              >
+                <p className="px-5 pb-4 text-sm text-[#6b7280] font-light leading-relaxed">{d.text}</p>
+              </motion.div>
+            )}
+          </AnimatePresence>
+        </div>
+      ))}
+    </div>
+  );
+}
+
 const axes = [
-  { label: "ビジョン共鳴力", en: "Vision", value: 88 },
+  { label: "存在目的の明確化", en: "Purpose", value: 88 },
+  { label: "価値設計力", en: "Value Design", value: 85 },
+  { label: "資源編集力", en: "Resource Edit", value: 78 },
   { label: "関係構築力", en: "Relationship", value: 75 },
-  { label: "プロジェクト実装力", en: "Implementation", value: 92 },
-  { label: "組織受容力", en: "Receptivity", value: 68 },
-  { label: "価値創出力", en: "Value Creation", value: 85 },
-  { label: "外部連携力", en: "Partnership", value: 78 },
-  { label: "戦略策定力", en: "Strategy", value: 82 },
+  { label: "役割設計力", en: "Role Design", value: 80 },
+  { label: "共創マネジメント力", en: "Management", value: 92 },
+  { label: "成長転換力", en: "Growth", value: 68 },
 ];
 
 const actions = [
@@ -18,22 +62,40 @@ const actions = [
     priority: "最優先",
     color: "#1a4f8a",
     bg: "#e8f0fb",
-    title: "共創パートナー候補リストの策定",
-    desc: "外部連携力スコアをさらに高めるため、産官学3セクターから各2社の候補を3ヶ月以内に特定する。",
+    title: "成長転換力を高める仕組みづくり",
+    desc: "唯一60点台の成長転換力を改善するため、共創の経験を振り返り、次の共創に活かす学習サイクルを設計する。",
   },
   {
     priority: "推奨",
     color: "#2d8a6b",
     bg: "#e8f5f0",
-    title: "組織受容力の底上げ施策",
-    desc: "唯一60点台の組織受容力を改善するため、中間管理職向けの共創マインドセット研修を実施する。",
+    title: "関係構築力の底上げ",
+    desc: "外部パートナーとの信頼関係を深めるため、初期段階での目的・期待値のすり合わせプロセスを整える。",
   },
   {
     priority: "継続",
     color: "#1a7a9a",
     bg: "#e8f4f8",
-    title: "プロジェクト実装力の横展開",
-    desc: "最高スコア92点の強みを全社に波及させるため、実装ノウハウのナレッジベース化を進める。",
+    title: "共創マネジメント力の横展開",
+    desc: "最高スコア92点の強みを全社に波及させるため、推進ノウハウのナレッジベース化を進める。",
+  },
+];
+
+const details = [
+  {
+    label: "存在目的の明確化",
+    score: 88,
+    text: "なぜ共創するのかという目的が明確で、外部にも自社の使命として伝えられています。共創の出発点が強固です。",
+  },
+  {
+    label: "共創マネジメント力",
+    score: 92,
+    text: "異なる組織との協働を推進し続ける力が突出しています。プロジェクトを前に進める実行力が貴社の強みです。",
+  },
+  {
+    label: "成長転換力",
+    score: 68,
+    text: "共創の経験を学習資産として次につなげる仕組みに伸び代があります。ここを強化することで共創の速度が大きく向上します。",
   },
 ];
 
@@ -182,7 +244,7 @@ function RadarChart({ animated }: { animated: boolean }) {
 
       {/* 中心スコア */}
       <text x={cx} y={cy - 8} textAnchor="middle" fontSize="22" fontWeight="300" fill="#0d2d52">
-        82
+        81
       </text>
       <text x={cx} y={cy + 10} textAnchor="middle" fontSize="10" fill="#9ca3af" letterSpacing="2">
         TOTAL
@@ -196,7 +258,7 @@ export default function DiagnosisResult() {
   const inView = useInView(ref, { once: true, margin: "-80px" });
 
   return (
-    <section ref={ref} className="py-28 md:py-40 bg-[#f8f9fa] relative overflow-hidden">
+    <section id="report" ref={ref} className="py-28 md:py-40 bg-[#f8f9fa] relative overflow-hidden">
       {/* 背景装飾 */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-0 right-0 w-[500px] h-[500px] rounded-full bg-gradient-to-bl from-[#e8f0fb] to-transparent opacity-60" />
@@ -212,12 +274,12 @@ export default function DiagnosisResult() {
           className="text-center mb-6"
         >
           <span className="text-xs tracking-[0.3em] text-[#1a4f8a] uppercase font-medium">
-            Result Image
+            Report
           </span>
           <h2 className="mt-4 text-[clamp(1.75rem,4vw,2.75rem)] font-light text-[#0d2d52] leading-tight">
-            こんな診断レポートが
+            診断後、自社の現在地と
             <br />
-            届きます
+            次の一手が届きます。
           </h2>
           <p className="mt-4 text-[#9ca3af] text-sm font-light">
             ※ 下記は架空企業のサンプルレポートです
@@ -256,7 +318,7 @@ export default function DiagnosisResult() {
                 </div>
                 <h3 className="text-white text-2xl font-light">株式会社サンプル</h3>
                 <p className="text-[#6b9fda] text-sm mt-1 font-light">
-                  新規事業開発部 / 診断実施日：2025年6月
+                  新規事業開発部 / 診断実施日：2025年11月
                 </p>
               </div>
 
@@ -266,7 +328,7 @@ export default function DiagnosisResult() {
                 <div className="text-center">
                   <div className="text-xs tracking-[0.2em] text-[#6b9fda] mb-1">TOTAL SCORE</div>
                   <div className="flex items-baseline gap-1">
-                    <span className="text-5xl md:text-6xl font-light text-white">82</span>
+                    <span className="text-5xl md:text-6xl font-light text-white">81</span>
                     <span className="text-xl text-[#6b9fda]">/100</span>
                   </div>
                 </div>
@@ -326,11 +388,11 @@ export default function DiagnosisResult() {
                   </div>
                   <div className="bg-[#f8f9fa] rounded-2xl p-5 border border-[#e5e7eb]">
                     <p className="text-[#374151] font-light text-sm leading-loose">
-                      貴社は共創マネジメントの<strong className="text-[#1a4f8a] font-medium">実装フェーズに到達</strong>しています。
-                      特にプロジェクト実装力（92点）とビジョン共鳴力（88点）が高く、
+                      貴社は共創の<strong className="text-[#1a4f8a] font-medium">実装フェーズに到達</strong>しています。
+                      特に共創マネジメント力（92点）と存在目的の明確化（88点）が高く、
                       外部パートナーを巻き込んだプロジェクト推進の素地が整っています。
-                      一方、組織受容力（68点）に伸び代があり、
-                      この点を強化することで共創速度が大幅に向上する見込みです。
+                      一方、成長転換力（68点）に伸び代があり、
+                      この点を強化することで共創の速度が大きく向上する見込みです。
                     </p>
                   </div>
                 </div>
@@ -370,6 +432,15 @@ export default function DiagnosisResult() {
                   </div>
                 </div>
               </div>
+            </div>
+
+            {/* 領域別詳細（アコーディオン） */}
+            <div className="mt-10">
+              <div className="flex items-center gap-2 mb-4">
+                <div className="w-1 h-4 rounded-full bg-[#0d2d52]" />
+                <h4 className="text-sm font-medium text-[#0d2d52] tracking-wider">領域別の詳細</h4>
+              </div>
+              <DetailAccordion />
             </div>
 
             {/* フッター */}

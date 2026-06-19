@@ -4,11 +4,30 @@ import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 
 const includes = [
-  "7軸診断レポート（PDF・全30〜50ページ）",
-  "スコア詳細解説と業界比較",
-  "ネクストアクション提言書",
-  "90分フィードバックセッション（オンライン）",
-  "3ヶ月後フォローアップチェックイン（30分）",
+  "7領域診断レポート（PDF）",
+  "スコア詳細解説と領域別所見",
+  "次の一手の提言",
+  "個別ヒアリング（60分）",
+  "フィードバックセッション（90分・オンライン）",
+];
+
+const partnerConditions = [
+  {
+    title: "診断後アンケートにご協力いただきます",
+    desc: "診断の改善のため、簡単なアンケートへのご回答をお願いしています。",
+  },
+  {
+    title: "外部公開は任意です",
+    desc: "事例としての公開は任意で、強制ではありません。非公開のままでもご利用いただけます。",
+  },
+  {
+    title: "継続契約は不要です",
+    desc: "診断後に別サービスの契約を結ぶ義務はありません。診断単独でご利用いただけます。",
+  },
+  {
+    title: "募集社数は後から設定されます",
+    desc: "共創基準を共につくるための限定枠です。募集社数に達し次第、通常価格に戻ります。",
+  },
 ];
 
 export default function Pricing() {
@@ -78,7 +97,7 @@ export default function Pricing() {
             </div>
 
             {/* 背景装飾 */}
-            <div className="absolute -bottom-12 -right-12 w-48 h-48 rounded-full bg-[#e8f0fb] opacity-60" />
+            <div className="absolute -bottom-12 -right-12 w-48 h-48 rounded-full bg-[#f0f4fb] opacity-60" />
             <div className="absolute -top-6 -left-6 w-32 h-32 rounded-full bg-[#e8f5f0] opacity-40" />
 
             <div className="relative">
@@ -95,7 +114,7 @@ export default function Pricing() {
                 <span className="text-xs text-[#2d8a6b] bg-[#e8f5f0] px-2 py-0.5 rounded-full font-medium">
                   特別価格
                 </span>
-                <span className="text-xs text-[#9ca3af]line-through">通常 300,000円</span>
+                <span className="text-xs text-[#9ca3af] line-through">通常 300,000円</span>
               </div>
 
               <div className="h-px bg-[#1a4f8a]/10 mb-6" />
@@ -113,17 +132,48 @@ export default function Pricing() {
 
               <a
                 href="#contact"
-                className="block w-full text-center py-4 bg-[#1a4f8a] text-white text-sm tracking-[0.08em] font-medium rounded-2xl hover:bg-[#0d2d52] transition-colors duration-300 shadow-lg shadow-[#1a4f8a]/20"
+                className="block w-full text-center py-4 bg-[#1a4f8a] text-white text-sm tracking-[0.08em] font-medium rounded-2xl hover:bg-[#0d2d52] transition-colors duration-300 shadow-lg shadow-[#1a4f8a]/20 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#1a4f8a]/40 focus-visible:ring-offset-2"
               >
-                パートナーとして申し込む
+                共創力診断に申し込む
               </a>
 
               <p className="text-center text-xs text-[#9ca3af] mt-3">
-                ※ 共創基準構築パートナー枠は残りわずかです
+                ※ 共創基準構築パートナー枠は限定募集です
               </p>
             </div>
           </motion.div>
         </div>
+
+        {/* 特別価格の理由 */}
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ delay: 0.45, duration: 0.7 }}
+          className="mt-12 max-w-4xl mx-auto rounded-3xl bg-[#f0f4fb] border border-[#1a4f8a]/10 p-8 md:p-10"
+        >
+          <h3 className="text-base md:text-lg font-medium text-[#0d2d52] mb-3">
+            なぜ、この特別価格なのか
+          </h3>
+          <p className="text-sm text-[#6b7280] font-light leading-loose mb-8">
+            WELLTOPIAは現在、企業の共創力を測る基準そのものを磨き上げている段階にあります。
+            共創基準構築パートナー価格は、その過程に協力いただける企業に向けた限定価格です。
+            診断を受けていただくことが、共創の基準づくりそのものへの参画になります。次の4点を明示します。
+          </p>
+
+          <div className="grid sm:grid-cols-2 gap-4">
+            {partnerConditions.map((c) => (
+              <div key={c.title} className="flex items-start gap-3 bg-white rounded-2xl border border-[#e5e7eb] p-5">
+                <svg className="w-5 h-5 flex-shrink-0 mt-0.5 text-[#2d8a6b]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                <div>
+                  <p className="text-sm font-medium text-[#0d2d52] mb-1">{c.title}</p>
+                  <p className="text-xs text-[#6b7280] font-light leading-relaxed">{c.desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </motion.div>
 
         {/* 注記 */}
         <motion.p
@@ -132,8 +182,7 @@ export default function Pricing() {
           transition={{ delay: 0.6, duration: 0.6 }}
           className="text-center text-xs text-[#9ca3af] mt-10 font-light"
         >
-          ※ 別途、交通費・宿泊費が発生する場合は実費精算となります。
-          お支払いは銀行振込（前払い）となります。
+          ※ お支払いは銀行振込（前払い）となります。
         </motion.p>
       </div>
     </section>
