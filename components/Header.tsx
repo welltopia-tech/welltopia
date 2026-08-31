@@ -38,7 +38,7 @@ export default function Header() {
         {/* ロゴ */}
         <a
           href="#"
-          className="flex items-baseline gap-2 group focus:outline-none focus-visible:ring-2 focus-visible:ring-[#1a4f8a]/40 rounded"
+          className="flex items-center gap-2 group focus:outline-none focus-visible:ring-2 focus-visible:ring-[#1a4f8a]/40 rounded"
           aria-label="WELLTOPIA 共創力診断 トップへ"
         >
           <img

@@ -17,7 +17,7 @@ export default function Footer() {
         <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-10">
           {/* ロゴ・メッセージ */}
           <div className="max-w-sm">
-            <div className="flex items-baseline gap-2 mb-4">
+            <div className="flex items-center gap-2 mb-4">
               <img
                 src="/images/logo/welltopia-white.png"
                 alt="WELLTOPIA"
