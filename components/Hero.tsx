@@ -153,7 +153,7 @@ export default function Hero() {
               className="mt-10 flex flex-col sm:flex-row gap-3"
             >
               <a
-                href="#pricing"
+                href="/diagnosis"
                 className="inline-flex items-center justify-center gap-2 bg-[#1a4f8a] text-white text-sm tracking-wide font-medium px-8 py-4 rounded-full hover:bg-[#0d2d52] transition-colors duration-300 shadow-lg shadow-[#1a4f8a]/20 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#1a4f8a]/40 focus-visible:ring-offset-2"
               >
                 自社の共創力を診断する
