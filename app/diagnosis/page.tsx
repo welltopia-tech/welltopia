@@ -28,7 +28,11 @@ export default function DiagnosisPage() {
       <div id="app" className="app">
         {/* Global top bar */}
         <div className="global-topbar">
-          <span className="brand-mark">WELLTOPIA</span>
+          <img
+            src="/images/logo/welltopia-blue.png"
+            alt="WELLTOPIA"
+            style={{ height: "15px", width: "auto" }}
+          />
           <span className="brand-sub">CO-CREATION DIAGNOSIS</span>
         </div>
 

@@ -246,8 +246,12 @@ export default function CTA() {
           transition={{ delay: 0.7, duration: 0.8 }}
           className="mt-20 pt-16 border-t border-[#e5e7eb]"
         >
-          <p className="text-xs tracking-[0.4em] text-[#9ca3af] uppercase mb-3">Welltopia</p>
-          <p className="text-sm text-[#9ca3af] font-light">人、企業、社会を、もっと健康にする。</p>
+          <img
+            src="/images/logo/welltopia-blue.png"
+            alt="WELLTOPIA"
+            className="h-4 w-auto opacity-60 mb-3"
+          />
+          <p className="text-sm text-[#9ca3af] font-light">ウェルビーイングの未来を描き、社会に新しい価値を生み出す。</p>
         </motion.div>
       </div>
     </section>

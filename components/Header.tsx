@@ -41,9 +41,11 @@ export default function Header() {
           className="flex items-baseline gap-2 group focus:outline-none focus-visible:ring-2 focus-visible:ring-[#1a4f8a]/40 rounded"
           aria-label="WELLTOPIA 共創力診断 トップへ"
         >
-          <span className="text-base md:text-lg font-medium tracking-wide text-[#0d2d52]">
-            WELLTOPIA
-          </span>
+          <img
+            src="/images/logo/welltopia-blue.png"
+            alt="WELLTOPIA"
+            className="h-5 md:h-6 w-auto"
+          />
           <span className="hidden sm:inline text-[#1a4f8a]/40">｜</span>
           <span className="hidden sm:inline text-xs md:text-sm font-light text-[#1a4f8a]">
             共創力診断

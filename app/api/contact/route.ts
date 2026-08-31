@@ -105,7 +105,7 @@ export async function POST(req: Request) {
 
           <div style="border-top: 1px solid #e5e7eb; padding-top: 24px;">
             <p style="font-size: 12px; color: #9ca3af; margin: 0;">WELLTOPIA</p>
-            <p style="font-size: 11px; color: #d1d5db; margin: 4px 0;">人、企業、社会を、もっと健康にする。</p>
+            <p style="font-size: 11px; color: #d1d5db; margin: 4px 0;">ウェルビーイングの未来を描き、社会に新しい価値を生み出す。</p>
           </div>
         </div>
       `,

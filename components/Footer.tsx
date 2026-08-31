@@ -18,12 +18,16 @@ export default function Footer() {
           {/* ロゴ・メッセージ */}
           <div className="max-w-sm">
             <div className="flex items-baseline gap-2 mb-4">
-              <span className="text-xl font-medium tracking-wide">WELLTOPIA</span>
+              <img
+                src="/images/logo/welltopia-white.png"
+                alt="WELLTOPIA"
+                className="h-6 w-auto"
+              />
               <span className="text-white/30">｜</span>
               <span className="text-sm font-light text-[#6b9fda]">共創力診断</span>
             </div>
             <p className="text-white/70 font-light leading-relaxed">
-              人、企業、社会を、もっと健康にする。
+              ウェルビーイングの未来を描き、社会に新しい価値を生み出す。
             </p>
           </div>
 
