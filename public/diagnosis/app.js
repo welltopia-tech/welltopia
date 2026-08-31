@@ -892,7 +892,8 @@
       '<input type="text" name="company" placeholder="会社名" required>' +
       '<input type="text" name="name" placeholder="氏名" required>' +
       '<input type="email" name="email" placeholder="メールアドレス" required>' +
-      '<button type="submit" class="btn btn-primary btn-block">送信する</button>' +
+      '<button type="submit" class="btn btn-primary btn-block" id="leadSubmitBtn">送信する</button>' +
+      '<div class="form-error" id="formError" hidden>送信に失敗しました。時間をおいて再度お試しください。</div>' +
       "</form>" +
       '<div class="form-success" id="formSuccess" hidden>送信が完了しました。担当より3営業日以内にご連絡いたします。</div>' +
       "</div>" +
@@ -911,21 +912,48 @@
       var form = document.getElementById("leadForm");
       var ctaForm = document.getElementById("ctaForm");
       var ctaFormNote = document.getElementById("ctaFormNote");
+      var submitBtn = document.getElementById("leadSubmitBtn");
+      var formError = document.getElementById("formError");
+      var requestType = "詳細診断レポート";
       document.getElementById("btnCtaMain").addEventListener("click", function () {
+        requestType = "詳細診断レポート";
         ctaFormNote.textContent = "詳細診断レポートをお届けするため、以下をご入力ください。";
         ctaForm.hidden = false;
         ctaForm.scrollIntoView({ behavior: "smooth", block: "center" });
       });
       document.getElementById("btnCtaSub").addEventListener("click", function () {
+        requestType = "共創マネジメントについての相談";
         ctaFormNote.textContent = "共創マネジメントに関するご相談のため、以下をご入力ください。";
         ctaForm.hidden = false;
         ctaForm.scrollIntoView({ behavior: "smooth", block: "center" });
       });
       form.addEventListener("submit", function (e) {
         e.preventDefault();
-        form.hidden = true;
-        ctaFormNote.hidden = true;
-        document.getElementById("formSuccess").hidden = false;
+        formError.hidden = true;
+        submitBtn.disabled = true;
+        submitBtn.textContent = "送信中...";
+
+        var fd = new FormData(form);
+        fetch("/api/diagnosis-lead", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            company: fd.get("company"),
+            name: fd.get("name"),
+            email: fd.get("email"),
+            requestType: requestType,
+            result: state.result
+          })
+        }).then(function (res) {
+          if (!res.ok) throw new Error("request failed");
+          form.hidden = true;
+          ctaFormNote.hidden = true;
+          document.getElementById("formSuccess").hidden = false;
+        }).catch(function () {
+          formError.hidden = false;
+          submitBtn.disabled = false;
+          submitBtn.textContent = "送信する";
+        });
       });
     });
 
