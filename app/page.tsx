@@ -3,6 +3,7 @@ import Hero from "@/components/site/Hero";
 import About from "@/components/site/About";
 import Business from "@/components/site/Business";
 import Works from "@/components/site/Works";
+import News from "@/components/site/News";
 import Company from "@/components/site/Company";
 import ContactCTA from "@/components/site/ContactCTA";
 import SiteFooter from "@/components/site/Footer";
@@ -16,6 +17,7 @@ export default function TopPage() {
         <About />
         <Business />
         <Works />
+        <News />
         <Company />
         <ContactCTA />
       </main>
