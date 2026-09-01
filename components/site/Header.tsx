@@ -10,7 +10,13 @@ const navItems = [
   { label: "Company", href: "/#company" },
 ];
 
-export default function SiteHeader({ solid = false }: { solid?: boolean }) {
+export default function SiteHeader({
+  solid = false,
+  lightHero = false,
+}: {
+  solid?: boolean;
+  lightHero?: boolean;
+}) {
   const [scrolled, setScrolled] = useState(solid);
 
   useEffect(() => {
@@ -22,6 +28,7 @@ export default function SiteHeader({ solid = false }: { solid?: boolean }) {
   }, [solid]);
 
   const dark = solid || scrolled;
+  const navy = lightHero && !dark;
 
   return (
     <header
@@ -32,7 +39,7 @@ export default function SiteHeader({ solid = false }: { solid?: boolean }) {
       <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-5 md:px-10">
         <Link href="/" className="flex items-center gap-2.5">
           <img
-            src="/images/logo/welltopia-white.png"
+            src={navy ? "/images/logo/welltopia-blue.png" : "/images/logo/welltopia-white.png"}
             alt="WELLTOPIA"
             className="h-4 w-auto md:h-[18px]"
           />
@@ -43,7 +50,9 @@ export default function SiteHeader({ solid = false }: { solid?: boolean }) {
             <Link
               key={item.label}
               href={item.href}
-              className="text-[13px] tracking-wide text-white/80 transition-colors hover:text-white"
+              className={`text-[13px] tracking-wide transition-colors ${
+                navy ? "text-[#0d2d52]/75 hover:text-[#0d2d52]" : "text-white/80 hover:text-white"
+              }`}
             >
               {item.label}
             </Link>
@@ -52,7 +61,11 @@ export default function SiteHeader({ solid = false }: { solid?: boolean }) {
 
         <Link
           href="/contact"
-          className="rounded-md border border-white/40 px-5 py-2.5 text-[12.5px] tracking-wide text-white transition-colors hover:border-white hover:bg-white/10"
+          className={`rounded-md border px-5 py-2.5 text-[12.5px] tracking-wide transition-colors ${
+            navy
+              ? "border-[#0d2d52]/35 text-[#0d2d52] hover:border-[#0d2d52] hover:bg-[#0d2d52]/10"
+              : "border-white/40 text-white hover:border-white hover:bg-white/10"
+          }`}
         >
           お問い合わせ
         </Link>

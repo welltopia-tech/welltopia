@@ -10,7 +10,7 @@ import SiteFooter from "@/components/site/Footer";
 export default function TopPage() {
   return (
     <>
-      <SiteHeader />
+      <SiteHeader lightHero />
       <main>
         <Hero />
         <About />
