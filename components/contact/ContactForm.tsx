@@ -73,6 +73,18 @@ export default function ContactForm() {
         type: "サービスについて",
         message: "共創マネジメント事業（CCM）について伺いたいです。",
       }));
+    } else if (topic === "research") {
+      setForm((prev) => ({
+        ...prev,
+        type: "サービスについて",
+        message: "COCOCHI Lab.（研究事業）について伺いたいです。",
+      }));
+    } else if (topic === "research-joint") {
+      setForm((prev) => ({
+        ...prev,
+        type: "サービスについて",
+        message: "COCOCHI Lab.との共同研究・受託研究について伺いたいです。",
+      }));
     }
   }, [searchParams]);
 
