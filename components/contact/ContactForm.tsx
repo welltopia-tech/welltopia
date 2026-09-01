@@ -60,11 +60,18 @@ export default function ContactForm() {
   const [sendError, setSendError] = useState("");
 
   useEffect(() => {
-    if (searchParams.get("topic") === "academy") {
+    const topic = searchParams.get("topic");
+    if (topic === "academy") {
       setForm((prev) => ({
         ...prev,
         type: "その他",
         message: "共創マネージャー育成事業について伺いたいです。",
+      }));
+    } else if (topic === "ccm") {
+      setForm((prev) => ({
+        ...prev,
+        type: "サービスについて",
+        message: "共創マネジメント事業（CCM）について伺いたいです。",
       }));
     }
   }, [searchParams]);

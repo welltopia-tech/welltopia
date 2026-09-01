@@ -9,7 +9,7 @@ const items = [
     name: "共創マネジメント事業",
     title: "人と企業の可能性をつなぎ、新しい体験価値を社会に実装する。",
     desc: "顧客の声、従業員の実感、企業が持つ資産、社外の知識・技術・文化・データをつなぎ、CX・EX、新規事業、共創プロジェクトの構想から実装、測定・改善までを一気通貫で支援します。",
-    cta: "詳しく見る",
+    cta: "共創マネジメント事業を見る",
     href: "/business/co-creation-management",
     logo: "/images/business/ccm-logo.png",
   },

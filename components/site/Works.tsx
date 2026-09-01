@@ -1,34 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-
-const works = [
-  {
-    tag: "CASE 01",
-    meta: "JAPAN — 2025.07",
-    title: "日韓越境体験 共創プロジェクト「81/82 ―ハチイチハチニ―」",
-    partners: "共創パートナー｜FLYING JAPAN・ユニゾンシステムズ・terasu",
-  },
-  {
-    tag: "CASE 02",
-    meta: "LOS ANGELES — 2026.02",
-    title: "発酵博覧会 国際共創プロジェクト「HAKKO EXPO & MARKET in LA」",
-    partners:
-      "雪国・新潟の発酵文化をテーマに、現地の来場者・料理関係者など約2,500名へ発信。共創パートナー｜SUZU GROUP・JACCC・terasu",
-  },
-  {
-    tag: "CASE 03",
-    meta: "JAPAN — 2024.11",
-    title: "AED認知委員会「おもちゃAED トイこころ」開発",
-    partners: "共創パートナー｜坂野電機工業所・スワニー・terasu",
-  },
-  {
-    tag: "CASE 04",
-    meta: "JAPAN — 2026.03〜",
-    title: "WELLTOPIA NIGHT プロジェクト",
-    partners: "心地よさを軸にした共創コミュニティイベントを継続的に展開中。",
-  },
-];
+import { works } from "@/lib/data/works";
 
 export default function Works() {
   return (
