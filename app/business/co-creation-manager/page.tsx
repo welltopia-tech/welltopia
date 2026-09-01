@@ -34,7 +34,7 @@ export default function CoCreationManagerBusinessPage() {
       <SiteHeader solid />
       <main className="bg-white pt-[72px]">
         {/* B-01 key visual */}
-        <section className="relative overflow-hidden bg-[#0d2d52] px-5 py-24 text-white md:px-10 md:py-32">
+        <section className="relative overflow-hidden bg-[#f0f4fb] px-5 py-24 text-[#0d2d52] md:px-10 md:py-32">
           <div
             className="absolute inset-0 bg-cover bg-[position:70%_center]"
             style={{ backgroundImage: "url(/images/business/academy-hero.jpg)" }}
@@ -44,27 +44,27 @@ export default function CoCreationManagerBusinessPage() {
             className="absolute inset-0"
             style={{
               background:
-                "linear-gradient(90deg, rgba(13,45,82,0.95) 0%, rgba(13,45,82,0.85) 38%, rgba(13,45,82,0.3) 72%, rgba(13,45,82,0.1) 100%)",
+                "linear-gradient(90deg, rgba(240,244,251,0.96) 0%, rgba(240,244,251,0.88) 38%, rgba(240,244,251,0.4) 72%, rgba(240,244,251,0.12) 100%)",
             }}
             aria-hidden="true"
           />
           <div className="relative mx-auto max-w-5xl">
-            <Link href="/#business" className="mb-10 inline-flex items-center gap-2 text-[13px] text-white/50 transition-colors hover:text-white">
+            <Link href="/#business" className="mb-10 inline-flex items-center gap-2 text-[13px] text-[#0d2d52]/50 transition-colors hover:text-[#0d2d52]">
               ← WELLTOPIAの3つの事業へ戻る
             </Link>
-            <div className="mb-8 block w-fit rounded-lg bg-white px-5 py-3">
+            <div className="mb-8 block w-fit rounded-lg bg-white px-5 py-3 shadow-sm">
               <img src="/images/business/fronpeer-logo.png" alt="FRONPEER" className="h-7 w-auto md:h-8" />
             </div>
             <span
-              className="mb-5 block text-sm italic tracking-[0.15em] text-[#8fbbe0]"
+              className="mb-5 block text-sm italic tracking-[0.15em] text-[#1a4f8a]"
               style={{ fontFamily: "var(--font-cormorant), serif" }}
             >
               CO-CREATION MANAGER ACADEMY
             </span>
-            <h1 className="mb-8 max-w-[18ch] text-[clamp(28px,4vw,46px)] font-medium leading-tight">
+            <h1 className="mb-8 max-w-[18ch] text-[clamp(28px,4vw,46px)] font-medium leading-tight text-[#0d2d52]">
               願いをつなぎ、共通の未来を動かす人を育てる。
             </h1>
-            <p className="mb-10 max-w-2xl font-light leading-[1.9] text-white/70">
+            <p className="mb-10 max-w-2xl font-light leading-[1.9] text-[#374151]">
               企業や組織の境界を越え、多様な人の願いと可能性をつなぎ、まだ存在しない価値を形にしていく。WELLTOPIAは、対話から構想、関係構築、実装、改善までを導く「共創マネージャー」を育成します。
             </p>
             <Link

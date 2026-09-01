@@ -28,29 +28,29 @@ export default function ResearchPage() {
             className="absolute inset-0"
             style={{
               background:
-                "linear-gradient(180deg, rgba(6,13,25,0.55) 0%, rgba(6,13,25,0.1) 35%, rgba(6,13,25,0.75) 100%)",
+                "linear-gradient(180deg, rgba(240,244,251,0.5) 0%, rgba(240,244,251,0.05) 35%, rgba(240,244,251,0.75) 100%)",
             }}
           />
           <div className="relative z-10 mx-auto w-full max-w-5xl">
-            <Link href="/#business" className="mb-8 inline-flex items-center gap-2 text-[13px] text-white/60 transition-colors hover:text-white">
+            <Link href="/#business" className="mb-8 inline-flex items-center gap-2 text-[13px] text-[#0d2d52]/60 transition-colors hover:text-[#0d2d52]">
               ← WELLTOPIAの3つの事業へ戻る
             </Link>
             <span
-              className="mb-4 block text-2xl italic text-white"
+              className="mb-4 block text-2xl italic text-[#1a4f8a]"
               style={{ fontFamily: "var(--font-cormorant), serif" }}
             >
               COCOCHI Lab.
             </span>
-            <h1 className="mb-6 max-w-[16ch] text-[clamp(24px,3.6vw,40px)] font-medium leading-tight text-white">
+            <h1 className="mb-6 max-w-[16ch] text-[clamp(24px,3.6vw,40px)] font-medium leading-tight text-[#0d2d52]">
               まだ見えていない、人と社会の可能性を探究する。
             </h1>
-            <p className="max-w-2xl font-light leading-[1.9] text-white/80">
+            <p className="max-w-2xl font-light leading-[1.9] text-[#374151]">
               WELLTOPIAは、ウェルビーイング、体験価値、共創、CX・EXを中心に、人と企業、社会の中で生まれている変化を研究します。まだ言葉や数値になっていない兆しを捉え、新しい価値基準と、社会で実践できる方法論へ変えていきます。
             </p>
           </div>
-          <div className="relative z-10 mx-auto mt-14 flex w-full max-w-5xl items-center gap-2.5 text-[10px] tracking-[0.2em] text-white/50">
+          <div className="relative z-10 mx-auto mt-14 flex w-full max-w-5xl items-center gap-2.5 text-[10px] tracking-[0.2em] text-[#0d2d52]/50">
             <span>SCROLL</span>
-            <span className="h-px w-16 bg-gradient-to-r from-white/40 to-transparent" />
+            <span className="h-px w-16 bg-gradient-to-r from-[#0d2d52]/40 to-transparent" />
           </div>
         </section>
 
