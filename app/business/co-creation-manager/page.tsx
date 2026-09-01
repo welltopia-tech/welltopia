@@ -34,8 +34,21 @@ export default function CoCreationManagerBusinessPage() {
       <SiteHeader solid />
       <main className="bg-white pt-[72px]">
         {/* B-01 key visual */}
-        <section className="bg-[#0d2d52] px-5 py-24 text-white md:px-10 md:py-32">
-          <div className="mx-auto max-w-5xl">
+        <section className="relative overflow-hidden bg-[#0d2d52] px-5 py-24 text-white md:px-10 md:py-32">
+          <div
+            className="absolute inset-0 bg-cover bg-[position:70%_center]"
+            style={{ backgroundImage: "url(/images/business/academy-hero.jpg)" }}
+            aria-hidden="true"
+          />
+          <div
+            className="absolute inset-0"
+            style={{
+              background:
+                "linear-gradient(90deg, rgba(13,45,82,0.95) 0%, rgba(13,45,82,0.85) 38%, rgba(13,45,82,0.3) 72%, rgba(13,45,82,0.1) 100%)",
+            }}
+            aria-hidden="true"
+          />
+          <div className="relative mx-auto max-w-5xl">
             <Link href="/#business" className="mb-10 inline-flex items-center gap-2 text-[13px] text-white/50 transition-colors hover:text-white">
               ← WELLTOPIAの3つの事業へ戻る
             </Link>

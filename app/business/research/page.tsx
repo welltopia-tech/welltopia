@@ -22,7 +22,7 @@ export default function ResearchPage() {
         <section className="relative flex min-h-[85vh] flex-col justify-end overflow-hidden px-5 pb-16 pt-20 md:px-10">
           <div
             className="absolute inset-0 bg-cover bg-center"
-            style={{ backgroundImage: "url(/images/business/research-kv.png)" }}
+            style={{ backgroundImage: "url(/images/business/research-hero.jpg)" }}
           />
           <div
             className="absolute inset-0"

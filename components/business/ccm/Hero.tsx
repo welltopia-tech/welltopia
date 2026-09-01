@@ -9,9 +9,19 @@ export default function Hero() {
       id="hero"
       className="relative flex min-h-[90svh] flex-col justify-center overflow-hidden bg-[#0d2d52] px-5 py-28 text-white md:px-10"
     >
-      {/* 既存Visionセクションと同じ抽象ビジュアル言語（円環グラデーション）を踏襲した背景装飾 */}
-      <div className="pointer-events-none absolute -right-40 top-1/2 h-[560px] w-[560px] -translate-y-1/2 rounded-full border border-[#8fbbe0]/10" aria-hidden="true" />
-      <div className="pointer-events-none absolute -right-64 top-1/2 h-[760px] w-[760px] -translate-y-1/2 rounded-full border border-[#8fbbe0]/10" aria-hidden="true" />
+      <div
+        className="absolute inset-0 bg-cover bg-[position:75%_center]"
+        style={{ backgroundImage: "url(/images/business/ccm-hero.jpg)" }}
+        aria-hidden="true"
+      />
+      <div
+        className="absolute inset-0"
+        style={{
+          background:
+            "linear-gradient(90deg, rgba(13,45,82,0.96) 0%, rgba(13,45,82,0.86) 35%, rgba(13,45,82,0.35) 70%, rgba(13,45,82,0.15) 100%)",
+        }}
+        aria-hidden="true"
+      />
 
       <div className="relative mx-auto w-full max-w-6xl">
         <Link

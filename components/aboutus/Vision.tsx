@@ -1,7 +1,6 @@
 "use client";
 
 import { motion } from "framer-motion";
-import CycleDiagram from "./CycleDiagram";
 import AudienceGrid from "./AudienceGrid";
 
 export default function Vision() {
@@ -15,7 +14,11 @@ export default function Vision() {
             viewport={{ once: true, margin: "-80px" }}
             transition={{ duration: 0.8 }}
           >
-            <CycleDiagram />
+            <img
+              src="/images/aboutus/cycle-of-possibility.png"
+              alt="可能性の循環：1.可能性を見つける、2.つなぎ、共創する、3.新しい価値を生む、4.企業が成長する、5.社会へ還元する、6.次の挑戦がひらく、という循環図"
+              className="mx-auto w-full max-w-[420px]"
+            />
           </motion.div>
 
           <motion.div
