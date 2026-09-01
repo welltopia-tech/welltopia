@@ -6,15 +6,15 @@ import AudienceGrid from "./AudienceGrid";
 export default function Purpose() {
   return (
     <section className="bg-white px-5 py-24 md:px-10 md:py-36">
-      <div className="mx-auto max-w-5xl">
+      <div className="mx-auto max-w-2xl text-center">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.7 }}
-          className="mb-16 max-w-2xl md:mb-24"
+          className="mb-16 md:mb-24"
         >
-          <div className="mb-5 flex items-center gap-2.5">
+          <div className="mb-5 flex items-center justify-center gap-2.5">
             <span className="h-px w-6 bg-[#1a4f8a]" />
             <span className="text-xs tracking-[0.25em] text-[#1a4f8a]">PURPOSE</span>
           </div>
@@ -33,7 +33,7 @@ export default function Purpose() {
           >
             Make well-being a new measure of value.
           </p>
-          <p className="font-light leading-[1.9] text-[#6b7280]">
+          <p className="mx-auto font-light leading-[1.9] text-[#6b7280]">
             WELLTOPIAは、心地よさを個人の感覚や一時的な満足で終わらせません。顧客の体験、従業員の実感、企業が持つ資産、社会にある知識や技術をつなぎ、その価値を発見し、可視化し、事業として実装していきます。人にとってより良い状態をつくることと、企業が選ばれ、成長し続けることを分断しない。心地よさを、企業と社会の意思決定を支える新しい価値基準へ変えていくことが、WELLTOPIAの存在意義です。
           </p>
         </motion.div>
