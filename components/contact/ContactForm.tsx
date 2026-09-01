@@ -67,6 +67,18 @@ export default function ContactForm() {
         type: "その他",
         message: "共創マネージャー育成事業について伺いたいです。",
       }));
+    } else if (topic === "academy-business") {
+      setForm((prev) => ({
+        ...prev,
+        type: "サービスについて",
+        message: "FRONPEER（共創マネージャー育成事業）の法人向け育成について伺いたいです。",
+      }));
+    } else if (topic === "academy-school") {
+      setForm((prev) => ({
+        ...prev,
+        type: "サービスについて",
+        message: "FRONPEER SCHOOL（2027年1月開校予定）の情報を受け取りたいです。",
+      }));
     } else if (topic === "ccm") {
       setForm((prev) => ({
         ...prev,
