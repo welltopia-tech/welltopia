@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Noto_Sans_JP } from "next/font/google";
+import { Noto_Sans_JP, Noto_Serif_JP, Cormorant_Garamond } from "next/font/google";
 import "./globals.css";
 
 const notoSansJP = Noto_Sans_JP({
@@ -9,23 +9,36 @@ const notoSansJP = Noto_Sans_JP({
   variable: "--font-noto-sans-jp",
 });
 
+const notoSerifJP = Noto_Serif_JP({
+  subsets: ["latin"],
+  weight: ["400", "500", "600"],
+  display: "swap",
+  variable: "--font-noto-serif-jp",
+});
+
+const cormorant = Cormorant_Garamond({
+  subsets: ["latin"],
+  weight: ["300", "400", "500"],
+  style: ["normal", "italic"],
+  display: "swap",
+  variable: "--font-cormorant",
+});
+
 export const metadata: Metadata = {
-  title: "WELLTOPIA 共創力診断｜企業の共創力を7領域から可視化",
+  title: "WELLTOPIA｜THE FUTURE OF WELL-BEING",
   description:
-    "共創力、測ってる？ WELLTOPIAの共創力診断は、外部企業との連携力と従業員との共創力を7領域から可視化し、企業の強み・課題・次の一手を明らかにします。",
+    "ウェルビーイングの未来を描き、社会に新しい価値を生み出す。WELLTOPIAは、顧客体験・従業員体験・共創を軸に、企業と社会の新しい価値を実装するCo-Creation Management Firmです。",
   openGraph: {
-    title: "WELLTOPIA 共創力診断｜企業の共創力を7領域から可視化",
-    description:
-      "共創力、測ってる？ WELLTOPIAの共創力診断は、外部企業との連携力と従業員との共創力を7領域から可視化し、企業の強み・課題・次の一手を明らかにします。",
+    title: "WELLTOPIA｜THE FUTURE OF WELL-BEING",
+    description: "ウェルビーイングの未来を描き、社会に新しい価値を生み出す。",
     siteName: "WELLTOPIA",
     locale: "ja_JP",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "WELLTOPIA 共創力診断｜企業の共創力を7領域から可視化",
-    description:
-      "共創力、測ってる？ 外部企業との連携力と従業員との共創力を7領域から可視化します。",
+    title: "WELLTOPIA｜THE FUTURE OF WELL-BEING",
+    description: "ウェルビーイングの未来を描き、社会に新しい価値を生み出す。",
   },
 };
 
@@ -35,7 +48,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="ja" className={notoSansJP.variable}>
+    <html lang="ja" className={`${notoSansJP.variable} ${notoSerifJP.variable} ${cormorant.variable}`}>
       <body>{children}</body>
     </html>
   );
