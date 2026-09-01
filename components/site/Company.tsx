@@ -52,15 +52,22 @@ export default function Company() {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="rounded-xl border border-[#e5e7eb] bg-[#f8f9fa] p-8"
           >
-            <span className="mb-3 block text-xs font-medium tracking-wide text-[#1a4f8a]">
+            <span className="mb-5 block text-xs font-medium tracking-wide text-[#1a4f8a]">
               代表プロフィール
             </span>
-            <p
-              className="mb-4 text-[15px] font-medium text-[#0d2d52]"
-              style={{ fontFamily: "var(--font-noto-serif-jp), serif" }}
-            >
-              加藤 有希 ── 代表取締役／看護師／健康経営エキスパートアドバイザー
-            </p>
+            <div className="mb-5 flex items-center gap-4">
+              <img
+                src="/images/company/representative.png"
+                alt="代表取締役 加藤有希"
+                className="h-16 w-16 flex-none rounded-full object-cover"
+              />
+              <p
+                className="text-[15px] font-medium leading-snug text-[#0d2d52]"
+                style={{ fontFamily: "var(--font-noto-serif-jp), serif" }}
+              >
+                加藤 有希 ── 代表取締役／看護師／健康経営エキスパートアドバイザー
+              </p>
+            </div>
             <p className="mb-4 text-[13.5px] leading-relaxed text-[#6b7280]">
               慶應義塾大学看護医療学部卒業後、慶應義塾大学病院の血液内科にて看護師として勤務。医療現場で多くの患者と向き合った経験から、「病気になる前から、よりよい未来をつくる」ことを志し、ウェルビーイング領域の事業開発へ。
             </p>
