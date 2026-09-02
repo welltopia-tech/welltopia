@@ -62,7 +62,7 @@ export default function Business() {
                 i === 2 ? "sm:col-span-2 lg:col-span-1" : ""
               }`}
             >
-              <div className="flex aspect-[16/9] items-center justify-center bg-white p-10 transition-colors duration-500 group-hover:bg-[#0d2d52]">
+              <div className="flex aspect-[16/9] items-center justify-center border-2 border-[#1a4f8a]/20 bg-white p-10 transition-colors duration-500 group-hover:border-[#1a4f8a]">
                 <img
                   src={item.logo}
                   alt={item.name}
