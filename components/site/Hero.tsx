@@ -42,12 +42,12 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.9, delay: 0.5, ease: [0.22, 1, 0.36, 1] }}
-          className="mb-5 whitespace-nowrap text-[clamp(31px,6vw,78px)] font-light leading-tight text-[#0d2d52]"
+          className="mb-5 whitespace-nowrap text-[clamp(47px,9vw,117px)] font-light leading-tight text-[#0d2d52]"
           style={{ fontFamily: "var(--font-cormorant), serif" }}
         >
           The Future
           <br />
-          <em className="italic text-[#1a4f8a]">of Well-Being</em>
+          <span className="not-italic text-[#1a4f8a]">of Well-Being</span>
         </motion.h1>
         <motion.p
           initial={{ opacity: 0, y: 16 }}

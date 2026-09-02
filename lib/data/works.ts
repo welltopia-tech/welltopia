@@ -9,6 +9,10 @@ export type WorkCase = {
   capabilities?: string[];
   /** WLM（WELLTOPIA LADDER METHOD）の実施フェーズ */
   ccmPhases?: string[];
+  /** 実績一覧でハッシュタグ表示する分類（Service / Industry / Issues） */
+  service?: string[];
+  industry?: string[];
+  issues?: string[];
   /** 体験価値がどう変化したかの一言（データが揃い次第、順次追加） */
   experienceChange?: string;
   /**
@@ -41,6 +45,9 @@ export const works: WorkCase[] = [
     business: "co-creation-management",
     capabilities: ["CO-CREATION DESIGN", "EXPERIENCE STRATEGY"],
     ccmPhases: ["CONNECT", "CREATE"],
+    service: ["体験デザイン", "共創プロジェクト設計"],
+    industry: ["観光・地域"],
+    issues: ["越境体験を設計したい", "共創パートナーをつなぎたい"],
   },
   {
     tag: "CASE 02",
@@ -51,6 +58,9 @@ export const works: WorkCase[] = [
     business: "co-creation-management",
     capabilities: ["CO-CREATION DESIGN", "CREATIVE & COMMUNICATION"],
     ccmPhases: ["CONNECT", "IMPLEMENT"],
+    service: ["共創プロジェクト設計", "クリエイティブ・コミュニケーション"],
+    industry: ["食・発酵文化"],
+    issues: ["海外へ文化を発信したい", "共創パートナーをつなぎたい"],
   },
   {
     tag: "CASE 03",
@@ -60,11 +70,16 @@ export const works: WorkCase[] = [
     business: "co-creation-management",
     capabilities: ["NEW VALUE INCUBATION", "CX DESIGN"],
     ccmPhases: ["CREATE", "IMPLEMENT"],
+    service: ["新規事業開発", "CXデザイン"],
+    industry: ["医療・防災"],
+    issues: ["新しい商品を社会実装したい"],
   },
   {
     tag: "CASE 04",
     meta: "JAPAN — 2026.03〜",
     title: "WELLTOPIA NIGHT プロジェクト",
     partners: "心地よさを軸にした共創コミュニティイベントを継続的に展開中。",
+    service: ["コミュニティ運営"],
+    industry: ["コミュニティ・イベント"],
   },
 ];

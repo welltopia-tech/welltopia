@@ -52,7 +52,35 @@ export default function Works() {
                 >
                   {w.title}
                 </p>
-                <p className="text-[11.5px] text-white/50">{w.partners}</p>
+                <p className="mb-4 text-[11.5px] text-white/50">{w.partners}</p>
+
+                {(w.service?.length || w.industry?.length || w.issues?.length) && (
+                  <dl className="space-y-2.5">
+                    {(
+                      [
+                        ["Service", w.service],
+                        ["Industry", w.industry],
+                        ["Issues", w.issues],
+                      ] as const
+                    ).map(([label, tags]) =>
+                      tags?.length ? (
+                        <div key={label} className="flex flex-col gap-1.5 sm:flex-row sm:items-center sm:gap-3">
+                          <dt className="w-[70px] flex-none text-[11px] tracking-wide text-white/40">{label}</dt>
+                          <dd className="flex flex-wrap gap-1.5">
+                            {tags.map((t) => (
+                              <span
+                                key={t}
+                                className="rounded border border-white/15 bg-white px-2.5 py-1 text-[11px] text-[#0d2d52]"
+                              >
+                                #{t}
+                              </span>
+                            ))}
+                          </dd>
+                        </div>
+                      ) : null
+                    )}
+                  </dl>
+                )}
               </div>
             </motion.div>
           ))}
