@@ -14,7 +14,7 @@ export default function WorksPage() {
   return (
     <>
       <SiteHeader solid />
-      <main className="bg-[#0d2d52] pt-[72px]">
+      <main className="bg-[#0d2d52] pt-[120px]">
         <div className="mx-auto max-w-6xl px-5 pt-10 md:px-10">
           <Link
             href="/"

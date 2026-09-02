@@ -14,7 +14,7 @@ export default function NewsPage() {
   return (
     <>
       <SiteHeader solid />
-      <main className="bg-[#f8f9fa] pt-[72px]">
+      <main className="bg-[#f8f9fa] pt-[120px]">
         <div className="mx-auto max-w-6xl px-5 pt-10 md:px-10">
           <Link
             href="/"

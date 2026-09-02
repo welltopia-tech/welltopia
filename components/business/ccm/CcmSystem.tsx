@@ -59,7 +59,7 @@ export default function CcmSystem() {
   const [openCap, setOpenCap] = useState<string | null>(null);
 
   return (
-    <section id="ccm-system" className="scroll-mt-[130px] bg-[#0d2d52] px-5 py-24 text-white md:px-10 md:py-36">
+    <section id="ccm-system" className="scroll-mt-[180px] bg-[#0d2d52] px-5 py-24 text-white md:px-10 md:py-36">
       <div className="mx-auto max-w-6xl">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

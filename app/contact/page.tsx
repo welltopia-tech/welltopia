@@ -15,7 +15,7 @@ export default function ContactPage() {
   return (
     <>
       <SiteHeader solid />
-      <main className="min-h-screen bg-white pt-[72px]">
+      <main className="min-h-screen bg-white pt-[120px]">
         <div className="mx-auto max-w-3xl px-5 py-20 md:px-10 md:py-28">
           <Link href="/" className="mb-10 inline-flex items-center gap-2 text-[13px] text-[#6b7280] transition-colors hover:text-[#1a4f8a] md:mb-14">
             ← WELLTOPIA トップへ戻る

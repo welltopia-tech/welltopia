@@ -13,7 +13,7 @@ const wantedFor = [
 
 export default function GetStarted() {
   return (
-    <section id="get-started" className="scroll-mt-[130px] bg-[#0d2d52] px-5 py-24 text-white md:px-10 md:py-32">
+    <section id="get-started" className="scroll-mt-[180px] bg-[#0d2d52] px-5 py-24 text-white md:px-10 md:py-32">
       <div className="mx-auto max-w-3xl">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

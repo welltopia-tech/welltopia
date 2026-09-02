@@ -7,7 +7,7 @@ export default function Projects() {
   const items = works.filter((w) => w.business === "co-creation-management");
 
   return (
-    <section id="projects" className="scroll-mt-[130px] bg-white px-5 py-24 md:px-10 md:py-36">
+    <section id="projects" className="scroll-mt-[180px] bg-white px-5 py-24 md:px-10 md:py-36">
       <div className="mx-auto max-w-5xl">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

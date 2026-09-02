@@ -36,7 +36,7 @@ export default function PageAnchorNav({ items }: { items: AnchorItem[] }) {
   return (
     <nav
       aria-label="ページ内ナビゲーション"
-      className="sticky top-[72px] z-30 border-b border-[#e5e7eb] bg-white/90 backdrop-blur-sm"
+      className="sticky top-[120px] z-30 border-b border-[#e5e7eb] bg-white/90 backdrop-blur-sm"
     >
       <div
         ref={navRef}

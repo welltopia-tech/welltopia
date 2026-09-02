@@ -42,7 +42,7 @@ export default function SiteHeader({
           <img
             src={navy ? "/images/logo/welltopia-blue.png" : "/images/logo/welltopia-white.png"}
             alt="WELLTOPIA"
-            className="h-4 w-auto md:h-[18px]"
+            className="h-20 w-auto md:h-[90px]"
           />
         </Link>
 

@@ -32,7 +32,7 @@ const items = [
 
 export default function Relation() {
   return (
-    <section id="relation" className="scroll-mt-[130px] bg-white px-5 py-24 md:px-10 md:py-36">
+    <section id="relation" className="scroll-mt-[180px] bg-white px-5 py-24 md:px-10 md:py-36">
       <div className="mx-auto max-w-4xl">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

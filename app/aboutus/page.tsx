@@ -26,7 +26,7 @@ export default function AboutUsPage() {
   return (
     <>
       <SiteHeader solid />
-      <main className="pt-[72px]">
+      <main className="pt-[120px]">
         <AboutHero />
         <Belief />
         <Purpose />

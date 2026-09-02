@@ -14,7 +14,7 @@ const feelings = [
 
 export default function Why() {
   return (
-    <section id="why" className="scroll-mt-[130px] bg-white px-5 py-24 md:px-10 md:py-36">
+    <section id="why" className="scroll-mt-[180px] bg-white px-5 py-24 md:px-10 md:py-36">
       <div className="mx-auto max-w-3xl">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
