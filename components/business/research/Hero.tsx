@@ -36,7 +36,7 @@ export default function Hero() {
         <motion.span
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7 }}
+          transition={{ duration: 0.7, delay: 0.5 }}
           className="mb-6 block text-sm italic tracking-[0.15em] text-[#1a4f8a]"
           style={{ fontFamily: "var(--font-cormorant), serif" }}
         >
@@ -46,7 +46,7 @@ export default function Hero() {
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
+          transition={{ duration: 0.8, delay: 0.6, ease: [0.22, 1, 0.36, 1] }}
           className="mb-8 max-w-[14ch] text-[clamp(32px,5.6vw,60px)] font-medium leading-[1.3] text-[#0d2d52]"
           style={{ fontFamily: "var(--font-noto-serif-jp), serif" }}
         >
@@ -56,7 +56,7 @@ export default function Hero() {
         <motion.p
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.25 }}
+          transition={{ duration: 0.7, delay: 0.75 }}
           className="mb-6 max-w-xl font-light leading-[1.9] text-[#374151]"
         >
           人は、どんな瞬間を心地いいと感じるのか。その価値を、私たちはどう評価できるのか。そして、より良い体験を、どうすれば生み出せるのか。
@@ -65,7 +65,7 @@ export default function Hero() {
         <motion.p
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.35 }}
+          transition={{ duration: 0.7, delay: 0.85 }}
           className="mb-10 max-w-xl font-light leading-[1.9] text-[#6b7280]"
         >
           COCOCHI Lab.は、「体験」「評価」「共創」を研究するWELLTOPIAの研究事業です。独自研究に加え、企業・自治体・研究機関などから寄せられる問いに対して、研究設計から評価基準構築、体験研究、共創による実証までを行っています。
@@ -74,7 +74,7 @@ export default function Hero() {
         <motion.div
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.45 }}
+          transition={{ duration: 0.7, delay: 0.95 }}
           className="flex flex-wrap gap-2"
         >
           {tags.map((t) => (
@@ -91,7 +91,7 @@ export default function Hero() {
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ duration: 0.8, delay: 0.6 }}
+        transition={{ duration: 0.8, delay: 1.1 }}
         className="relative mx-auto mt-16 flex w-full max-w-6xl items-center gap-2.5 text-[10px] tracking-[0.2em] text-[#0d2d52]/50"
         aria-hidden="true"
       >

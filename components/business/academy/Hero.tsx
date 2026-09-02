@@ -38,7 +38,7 @@ export default function Hero() {
         <motion.span
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7 }}
+          transition={{ duration: 0.7, delay: 0.5 }}
           className="mb-6 block text-sm italic tracking-[0.15em] text-[#1a4f8a]"
           style={{ fontFamily: "var(--font-cormorant), serif" }}
         >
@@ -48,7 +48,7 @@ export default function Hero() {
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
+          transition={{ duration: 0.8, delay: 0.6, ease: [0.22, 1, 0.36, 1] }}
           className="mb-8 max-w-[15ch] text-[clamp(32px,5.6vw,60px)] font-medium leading-[1.3] text-[#0d2d52]"
           style={{ fontFamily: "var(--font-noto-serif-jp), serif" }}
         >
@@ -58,7 +58,7 @@ export default function Hero() {
         <motion.p
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.25 }}
+          transition={{ duration: 0.7, delay: 0.75 }}
           className="mb-4 max-w-xl font-light leading-[1.9] text-[#374151]"
         >
           FRONPEER（フロンピア）は、異なる人・知識・技術・資産・想いをつなぎ、新しい価値を共創によって実装まで導く「共創マネージャー」を育成するWELLTOPIAの人材育成事業です。
@@ -67,7 +67,7 @@ export default function Hero() {
         <motion.p
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.35 }}
+          transition={{ duration: 0.7, delay: 0.85 }}
           className="mb-10 max-w-xl font-light leading-[1.9] text-[#6b7280]"
         >
           企業・組織を対象とした共創マネージャー育成と、2027年1月開校予定の共創マネージャー育成スクール「FRONPEER」を通じて、共創を担える人材を社会に増やしていきます。
@@ -76,7 +76,7 @@ export default function Hero() {
         <motion.p
           initial={{ opacity: 0, y: 14 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.42 }}
+          transition={{ duration: 0.7, delay: 0.92 }}
           className="mb-10 max-w-xl text-[16px] font-medium leading-relaxed text-[#0d2d52] md:text-[18px]"
           style={{ fontFamily: "var(--font-noto-serif-jp), serif" }}
         >
@@ -86,7 +86,7 @@ export default function Hero() {
         <motion.div
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.5 }}
+          transition={{ duration: 0.7, delay: 1.0 }}
           className="flex flex-wrap gap-4"
         >
           <Link
@@ -107,7 +107,7 @@ export default function Hero() {
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ duration: 0.8, delay: 0.6 }}
+        transition={{ duration: 0.8, delay: 1.1 }}
         className="relative mx-auto mt-16 flex w-full max-w-6xl items-center gap-2.5 text-[10px] tracking-[0.2em] text-[#0d2d52]/50"
         aria-hidden="true"
       >

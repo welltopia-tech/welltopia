@@ -34,7 +34,7 @@ export default function Hero() {
         <motion.span
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7 }}
+          transition={{ duration: 0.7, delay: 0.5 }}
           className="mb-6 block text-sm italic tracking-[0.15em] text-[#1a4f8a]"
           style={{ fontFamily: "var(--font-cormorant), serif" }}
         >
@@ -44,7 +44,7 @@ export default function Hero() {
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
+          transition={{ duration: 0.8, delay: 0.6, ease: [0.22, 1, 0.36, 1] }}
           className="mb-8 max-w-[14ch] text-[clamp(34px,6vw,68px)] font-medium leading-[1.25] text-[#0d2d52]"
           style={{ fontFamily: "var(--font-noto-serif-jp), serif" }}
         >
@@ -54,7 +54,7 @@ export default function Hero() {
         <motion.p
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.25 }}
+          transition={{ duration: 0.7, delay: 0.75 }}
           className="mb-8 max-w-xl text-[15px] font-light leading-[1.9] text-[#374151] md:text-[17px]"
         >
           人と企業の可能性をつなぎ、新しい体験価値を社会に実装する。
@@ -63,7 +63,7 @@ export default function Hero() {
         <motion.p
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.35 }}
+          transition={{ duration: 0.7, delay: 0.85 }}
           className="mb-12 max-w-xl font-light leading-[1.9] text-[#6b7280]"
         >
           WELLTOPIAの共創マネジメントは、異なる願い、課題、知識、技術、文化、データをつなぎ、一社では生み出せない体験価値へ編集する仕組みです。共創を一度限りのアイデア創出やイベントで終わらせず、構想し、試し、測り、改善しながら、企業と社会に残る価値へ変えていきます。
@@ -72,7 +72,7 @@ export default function Hero() {
         <motion.div
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.45 }}
+          transition={{ duration: 0.7, delay: 0.95 }}
           className="flex flex-wrap gap-4"
         >
           <Link
@@ -93,7 +93,7 @@ export default function Hero() {
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ duration: 0.8, delay: 0.6 }}
+        transition={{ duration: 0.8, delay: 1.1 }}
         className="relative mx-auto mt-16 flex w-full max-w-6xl items-center gap-2.5 text-[10px] tracking-[0.2em] text-[#0d2d52]/50"
         aria-hidden="true"
       >

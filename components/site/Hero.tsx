@@ -25,7 +25,7 @@ export default function Hero() {
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
+          transition={{ duration: 0.9, delay: 0.5, ease: [0.22, 1, 0.36, 1] }}
           className="mb-5 whitespace-nowrap text-[clamp(31px,6vw,78px)] font-light leading-tight text-[#0d2d52]"
           style={{ fontFamily: "var(--font-cormorant), serif" }}
         >
@@ -36,7 +36,7 @@ export default function Hero() {
         <motion.p
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.15, duration: 0.8 }}
+          transition={{ delay: 0.65, duration: 0.8 }}
           className="mb-9 whitespace-nowrap text-[clamp(13px,1.5vw,18px)] tracking-wide text-[#0d2d52]/80"
           style={{ fontFamily: "var(--font-noto-serif-jp), serif" }}
         >
@@ -45,7 +45,7 @@ export default function Hero() {
         <motion.div
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.3, duration: 0.8 }}
+          transition={{ delay: 0.8, duration: 0.8 }}
           className="flex flex-wrap gap-4"
         >
           <Link
