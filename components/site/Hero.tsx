@@ -26,7 +26,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
-          className="mb-5 whitespace-nowrap text-[clamp(24px,4.6vw,60px)] font-light leading-tight text-[#0d2d52]"
+          className="mb-5 whitespace-nowrap text-[clamp(31px,6vw,78px)] font-light leading-tight text-[#0d2d52]"
           style={{ fontFamily: "var(--font-cormorant), serif" }}
         >
           THE FUTURE
