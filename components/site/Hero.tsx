@@ -10,11 +10,11 @@ export default function Hero() {
       className="relative flex min-h-screen flex-col justify-end overflow-hidden pb-14 md:pb-20"
     >
       <div
-        className="absolute inset-0 bg-cover bg-center md:bg-[position:center_22%]"
+        className="fixed inset-0 -z-10 bg-cover bg-center md:bg-[position:center_22%]"
         style={{ backgroundImage: "url(/images/top/hero.jpg)" }}
       />
       <div
-        className="absolute inset-0"
+        className="fixed inset-0 -z-10"
         style={{
           background:
             "linear-gradient(100deg, rgba(255,255,255,0.22) 0%, rgba(255,255,255,0.1) 30%, rgba(255,255,255,0) 55%), linear-gradient(180deg, rgba(255,255,255,0.12) 0%, rgba(255,255,255,0) 26%, rgba(255,255,255,0.05) 50%, rgba(255,255,255,0.55) 82%, rgba(255,255,255,0.82) 100%)",
@@ -29,9 +29,9 @@ export default function Hero() {
           className="mb-5 whitespace-nowrap text-[clamp(31px,6vw,78px)] font-light leading-tight text-[#0d2d52]"
           style={{ fontFamily: "var(--font-cormorant), serif" }}
         >
-          THE FUTURE
+          The Future
           <br />
-          OF <em className="italic text-[#1a4f8a]">WELL-BEING</em>
+          <em className="italic text-[#1a4f8a]">of Well-Being</em>
         </motion.h1>
         <motion.p
           initial={{ opacity: 0, y: 16 }}
