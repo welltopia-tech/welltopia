@@ -1,25 +1,44 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { useRef } from "react";
+import { motion, useScroll, useTransform } from "framer-motion";
 import Link from "next/link";
 
 export default function Hero() {
+  const heroRef = useRef<HTMLElement>(null);
+  // Hero区間をスクロールする間（Heroの上端が画面上端に来た瞬間→Heroの下端が
+  // 画面上端に来た瞬間＝ABOUTUSの文章が見え始める瞬間）で0→1に進む進捗値。
+  const { scrollYProgress } = useScroll({ target: heroRef, offset: ["start start", "end start"] });
+  const bgScale = useTransform(scrollYProgress, [0, 1], [1, 0.5]);
+  const tintOpacity = useTransform(scrollYProgress, [0, 1], [0, 0.55]);
+
   return (
     <section
+      ref={heroRef}
       id="hero"
       className="relative flex min-h-screen flex-col justify-end overflow-hidden pb-14 md:pb-20"
     >
-      <div
-        className="fixed inset-0 -z-10 bg-cover bg-center md:bg-[position:center_22%]"
-        style={{ backgroundImage: "url(/images/top/hero.jpg)" }}
-      />
-      <div
-        className="fixed inset-0 -z-10"
-        style={{
-          background:
-            "linear-gradient(100deg, rgba(255,255,255,0.22) 0%, rgba(255,255,255,0.1) 30%, rgba(255,255,255,0) 55%), linear-gradient(180deg, rgba(255,255,255,0.12) 0%, rgba(255,255,255,0) 26%, rgba(255,255,255,0.05) 50%, rgba(255,255,255,0.55) 82%, rgba(255,255,255,0.82) 100%)",
-        }}
-      />
+      <div className="fixed inset-0 -z-10 bg-[#0d2d52]">
+        <motion.div style={{ scale: bgScale }} className="absolute inset-0">
+          <div
+            className="absolute inset-0 bg-cover bg-center md:bg-[position:center_22%]"
+            style={{ backgroundImage: "url(/images/top/hero.jpg)" }}
+          />
+          <div
+            className="absolute inset-0"
+            style={{
+              background:
+                "linear-gradient(100deg, rgba(255,255,255,0.22) 0%, rgba(255,255,255,0.1) 30%, rgba(255,255,255,0) 55%), linear-gradient(180deg, rgba(255,255,255,0.12) 0%, rgba(255,255,255,0) 26%, rgba(255,255,255,0.05) 50%, rgba(255,255,255,0.55) 82%, rgba(255,255,255,0.82) 100%)",
+            }}
+          />
+        </motion.div>
+        {/* スクロールに応じて濃くなる青トーンのヴェール。ABOUTUSの文章が
+            見えやすくなるよう、画面全体を少し暗く・爽やかな青に沈める */}
+        <motion.div
+          className="absolute inset-0 bg-[#0d2d52]"
+          style={{ opacity: tintOpacity }}
+        />
+      </div>
 
       <div className="relative z-10 mx-auto w-full max-w-7xl px-5 md:px-10">
         <motion.h1
