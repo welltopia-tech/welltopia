@@ -4,11 +4,11 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 
 const navItems = [
-  { label: "About", href: "/#about" },
-  { label: "Business", href: "/#business" },
-  { label: "Works", href: "/#works" },
-  { label: "News", href: "/#news" },
-  { label: "Company", href: "/#company" },
+  { label: "About", href: "/aboutus" },
+  { label: "Business", href: "/business/co-creation-management" },
+  { label: "Works", href: "/works" },
+  { label: "News", href: "/news" },
+  { label: "Company", href: "/aboutus#company" },
 ];
 
 export default function SiteHeader({
