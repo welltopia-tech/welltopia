@@ -9,7 +9,7 @@ export default function Hero() {
   // Hero区間をスクロールする間（Heroの上端が画面上端に来た瞬間→Heroの下端が
   // 画面上端に来た瞬間＝ABOUTUSの文章が見え始める瞬間）で0→1に進む進捗値。
   const { scrollYProgress } = useScroll({ target: heroRef, offset: ["start start", "end start"] });
-  const bgScale = useTransform(scrollYProgress, [0, 1], [1, 0.5]);
+  const bgScale = useTransform(scrollYProgress, [0, 1], [1, 0.85]);
   const tintOpacity = useTransform(scrollYProgress, [0, 1], [0, 0.55]);
 
   return (
