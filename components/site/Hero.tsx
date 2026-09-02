@@ -29,7 +29,9 @@ export default function Hero() {
           className="mb-5 whitespace-nowrap text-[clamp(24px,4.6vw,60px)] font-light leading-tight text-[#0d2d52]"
           style={{ fontFamily: "var(--font-cormorant), serif" }}
         >
-          THE FUTURE OF <em className="italic text-[#1a4f8a]">WELL-BEING</em>
+          THE FUTURE
+          <br />
+          OF <em className="italic text-[#1a4f8a]">WELL-BEING</em>
         </motion.h1>
         <motion.p
           initial={{ opacity: 0, y: 16 }}
