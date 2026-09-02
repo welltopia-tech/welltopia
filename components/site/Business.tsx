@@ -30,6 +30,16 @@ const items = [
   },
 ];
 
+// グリッドの外周4隅にあたるカードだけ、ブレークポイントごとに実際に
+// 外周に接する角を丸める（グリッド自体のoverflow-hiddenに頼ると、
+// ホバー時に拡大したカードの外周側の枠線が切り取られてしまうため、
+// 角丸と切り抜きは各カード自身が担う）。
+const cardCornerClasses = [
+  "rounded-t-2xl sm:rounded-tr-none lg:rounded-bl-2xl", // 01: 左上（lg以上は左下も）
+  "sm:rounded-tr-2xl lg:rounded-tr-none", // 02: smのときだけ右上に来る
+  "rounded-b-2xl lg:rounded-bl-none lg:rounded-r-2xl", // 03: 左下→lg以上は右側全体
+];
+
 export default function Business() {
   return (
     <section id="business" className="bg-[#f8f9fa] px-5 py-24 md:px-10 md:py-32">
@@ -50,7 +60,7 @@ export default function Business() {
           </h2>
         </motion.div>
 
-        <div className="grid grid-cols-1 gap-px overflow-hidden rounded-2xl border border-[#e5e7eb] bg-[#e5e7eb] sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid grid-cols-1 gap-px rounded-2xl border border-[#e5e7eb] bg-[#e5e7eb] sm:grid-cols-2 lg:grid-cols-3">
           {items.map((item, i) => (
             <motion.div
               key={item.idx}
@@ -58,11 +68,11 @@ export default function Business() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-60px" }}
               transition={{ duration: 0.6, delay: i * 0.08 }}
-              className={`group relative flex flex-col overflow-hidden transition-all duration-500 hover:z-10 hover:scale-[1.04] hover:shadow-2xl hover:shadow-[#0d2d52]/15 ${
+              className={`group relative flex flex-col overflow-hidden transition-all duration-500 hover:z-10 hover:scale-[1.04] hover:shadow-2xl hover:shadow-[#0d2d52]/15 ${cardCornerClasses[i]} ${
                 i === 2 ? "sm:col-span-2 lg:col-span-1" : ""
               }`}
             >
-              <div className="flex aspect-[16/9] items-center justify-center border-[5px] border-[#1a4f8a]/40 bg-white p-10 transition-colors duration-500 group-hover:border-[#1a4f8a]">
+              <div className="flex aspect-[16/9] items-center justify-center border-[15px] border-white bg-white p-10 transition-colors duration-500 group-hover:border-[#1a4f8a]">
                 <img
                   src={item.logo}
                   alt={item.name}
