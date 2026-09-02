@@ -20,9 +20,9 @@ export default function Company() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: 0.7 }}
-          className="mb-14 md:mb-20"
+          className="mb-14 text-center md:mb-20"
         >
-          <div className="mb-4 inline-flex items-center gap-2.5">
+          <div className="mb-4 inline-flex items-center justify-center gap-2.5">
             <span className="h-px w-6 bg-[#1a4f8a]" />
             <span className="text-xs tracking-[0.25em] text-[#1a4f8a]">COMPANY</span>
           </div>
@@ -55,25 +55,27 @@ export default function Company() {
             <span className="mb-5 block text-xs font-medium tracking-wide text-[#1a4f8a]">
               代表プロフィール
             </span>
-            <div className="mb-5 flex items-center gap-4">
+            <div className="flex flex-col-reverse gap-6 sm:flex-row sm:items-start sm:justify-between">
+              <div className="sm:flex-1">
+                <p
+                  className="mb-4 text-[15px] font-medium leading-snug text-[#0d2d52]"
+                  style={{ fontFamily: "var(--font-noto-serif-jp), serif" }}
+                >
+                  加藤 有希 ── 代表取締役／看護師／健康経営エキスパートアドバイザー
+                </p>
+                <p className="mb-4 text-[13.5px] leading-relaxed text-[#6b7280]">
+                  慶應義塾大学看護医療学部卒業後、慶應義塾大学病院の血液内科にて看護師として勤務。医療現場で多くの患者と向き合った経験から、「病気になる前から、よりよい未来をつくる」ことを志し、ウェルビーイング領域の事業開発へ。
+                </p>
+                <p className="text-[13.5px] leading-relaxed text-[#6b7280]">
+                  おもちゃAED「トイこころ」の社会実装に携わり、AED功労賞最優秀賞を受賞。発酵をテーマに国内外で展開する「HAKKO EXPO」の企画・プロデュースなど、企業・地域・専門家との共創を通じて、健やかさを新しい体験価値へ変える事業を推進している。
+                </p>
+              </div>
               <img
                 src="/images/company/representative.png"
                 alt="代表取締役 加藤有希"
-                className="h-16 w-16 flex-none rounded-full object-cover"
+                className="h-32 w-32 flex-none self-center rounded-full object-cover sm:h-40 sm:w-40 sm:self-start"
               />
-              <p
-                className="text-[15px] font-medium leading-snug text-[#0d2d52]"
-                style={{ fontFamily: "var(--font-noto-serif-jp), serif" }}
-              >
-                加藤 有希 ── 代表取締役／看護師／健康経営エキスパートアドバイザー
-              </p>
             </div>
-            <p className="mb-4 text-[13.5px] leading-relaxed text-[#6b7280]">
-              慶應義塾大学看護医療学部卒業後、慶應義塾大学病院の血液内科にて看護師として勤務。医療現場で多くの患者と向き合った経験から、「病気になる前から、よりよい未来をつくる」ことを志し、ウェルビーイング領域の事業開発へ。
-            </p>
-            <p className="text-[13.5px] leading-relaxed text-[#6b7280]">
-              おもちゃAED「トイこころ」の社会実装に携わり、AED功労賞最優秀賞を受賞。発酵をテーマに国内外で展開する「HAKKO EXPO」の企画・プロデュースなど、企業・地域・専門家との共創を通じて、健やかさを新しい体験価値へ変える事業を推進している。
-            </p>
           </motion.div>
         </div>
       </div>
