@@ -61,34 +61,34 @@ export default function Business() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-60px" }}
               transition={{ duration: 0.6, delay: i * 0.08 }}
-              className={`group relative flex flex-col bg-white transition-all duration-500 hover:z-10 hover:scale-[1.04] hover:shadow-2xl hover:shadow-[#0d2d52]/15 ${
+              className={`group relative flex flex-col overflow-hidden transition-all duration-500 hover:z-10 hover:scale-[1.04] hover:shadow-2xl hover:shadow-[#0d2d52]/15 ${
                 i === 2 ? "sm:col-span-2 lg:col-span-1" : ""
               }`}
             >
-              <div className="flex aspect-[16/9] items-center justify-center bg-[#0d2d52] p-10 transition-colors duration-500 group-hover:bg-[#0a2444]">
+              <div className="flex aspect-[16/9] items-center justify-center bg-white p-10 transition-colors duration-500 group-hover:bg-[#0d2d52]">
                 <img
                   src={item.logo}
                   alt={item.name}
-                  className="max-h-16 w-auto max-w-[70%] object-contain transition-transform duration-500 group-hover:scale-105"
+                  className="max-h-16 w-auto max-w-[70%] object-contain transition-transform duration-500 group-hover:scale-90"
                 />
               </div>
-              <div className="flex flex-1 flex-col p-7 md:p-8">
+              <div className="flex flex-1 flex-col bg-[#0d2d52] p-7 transition-colors duration-500 group-hover:bg-white md:p-8">
                 <span
-                  className="mb-3 text-lg italic text-[#1a4f8a]"
+                  className="mb-3 text-lg italic text-[#8fbbe0] transition-colors duration-500 group-hover:text-[#1a4f8a]"
                   style={{ fontFamily: "var(--font-cormorant), serif" }}
                 >
                   {item.idx}
                 </span>
-                <p className="mb-2 text-xs font-medium tracking-wide text-[#6b7280]">{item.name}</p>
-                <h3 className="mb-4 text-[17px] font-medium leading-relaxed text-[#0d2d52]">
+                <p className="mb-2 text-xs font-medium tracking-wide text-white/50 transition-colors duration-500 group-hover:text-[#6b7280]">{item.name}</p>
+                <h3 className="mb-4 text-[17px] font-medium leading-relaxed text-white transition-colors duration-500 group-hover:text-[#0d2d52]">
                   {item.title}
                 </h3>
-                <p className="mb-6 flex-1 text-[13.5px] leading-relaxed text-[#6b7280]">
+                <p className="mb-6 flex-1 text-[13.5px] leading-relaxed text-white/70 transition-colors duration-500 group-hover:text-[#6b7280]">
                   {item.desc}
                 </p>
                 <Link
                   href={item.href}
-                  className="inline-flex w-fit items-center gap-2 text-[13px] font-medium text-[#1a4f8a] transition-all group-hover:gap-3 group-hover:text-[#0d2d52]"
+                  className="inline-flex w-fit items-center gap-2 text-[13px] font-medium text-[#8fbbe0] transition-all duration-500 group-hover:gap-3 group-hover:text-[#1a4f8a]"
                 >
                   {item.cta} →
                 </Link>
