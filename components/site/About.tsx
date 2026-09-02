@@ -41,10 +41,9 @@ export default function About() {
             </p>
             <Link
               href="/aboutus"
-              className="group/cta relative inline-flex w-fit items-center gap-2 text-[16.25px] font-medium text-white transition-colors hover:text-[#8fbbe0] after:absolute after:-bottom-0.5 after:left-0 after:h-px after:w-0 after:bg-current after:transition-all after:duration-300 group-hover/cta:after:w-full"
+              className="inline-flex w-fit items-center gap-2 rounded-md border border-white/40 bg-white/10 px-6 py-4 text-sm font-medium text-white backdrop-blur-sm transition-colors hover:border-white hover:bg-white/20"
             >
-              私たちについて
-              <span className="transition-transform group-hover/cta:translate-x-1">→</span>
+              私たちについて →
             </Link>
           </motion.div>
         </div>
