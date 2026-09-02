@@ -72,10 +72,10 @@ export default function About() {
               </p>
               <Link
                 href="/aboutus"
-                className="inline-flex w-fit items-center gap-2 text-[13px] font-medium text-[#8fbbe0] transition-colors hover:text-white"
+                className="group/cta relative inline-flex w-fit items-center gap-2 text-[16.25px] font-medium text-[#8fbbe0] transition-colors hover:text-white after:absolute after:-bottom-0.5 after:left-0 after:h-px after:w-0 after:bg-current after:transition-all after:duration-300 group-hover/cta:after:w-full"
               >
                 私たちについて
-                <span className="transition-transform group-hover:translate-x-1">→</span>
+                <span className="transition-transform group-hover/cta:translate-x-1">→</span>
               </Link>
             </div>
           </div>

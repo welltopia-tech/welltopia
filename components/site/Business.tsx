@@ -7,7 +7,6 @@ const items = [
   {
     idx: "01",
     name: "共創マネジメント事業",
-    title: "人と企業の可能性をつなぎ、新しい体験価値を社会に実装する。",
     desc: "顧客の声、従業員の実感、企業が持つ資産、社外の知識・技術・文化・データをつなぎ、CX・EX、新規事業、共創プロジェクトの構想から実装、測定・改善までを一気通貫で支援します。",
     cta: "共創マネジメント事業を見る",
     href: "/business/co-creation-management",
@@ -16,7 +15,6 @@ const items = [
   {
     idx: "02",
     name: "研究事業",
-    title: "人と社会の変化を捉え、新しい価値の可能性を見つける。",
     desc: "ウェルビーイング、体験価値、共創、CX・EXを中心に、社会や生活者、組織に生まれている変化を研究します。独自調査、共同研究、実証実験を通じて、新しい知見と実践可能な方法論を生み出します。",
     cta: "詳しく見る",
     href: "/business/research",
@@ -25,7 +23,6 @@ const items = [
   {
     idx: "03",
     name: "共創マネージャー育成事業",
-    title: "組織や領域を越えて、人と未来をつなぐ担い手を育てる。",
     desc: "企業、地域、専門家、生活者など、多様な関係者をつなぎ、共通の未来を描きながらプロジェクトを前進させる「共創マネージャー」を育成します。知識の習得だけでなく、実践を通じて共創を推進する力を育てます。",
     cta: "育成事業を見る",
     href: "/business/co-creation-manager",
@@ -79,9 +76,8 @@ export default function Business() {
                 >
                   {item.idx}
                 </span>
-                <p className="mb-2 text-xs font-medium tracking-wide text-white/50 transition-colors duration-500 group-hover:text-[#6b7280]">{item.name}</p>
-                <h3 className="mb-4 text-[17px] font-medium leading-relaxed text-white transition-colors duration-500 group-hover:text-[#0d2d52]">
-                  {item.title}
+                <h3 className="mb-4 text-[25.5px] font-medium leading-snug text-white transition-colors duration-500 group-hover:text-[#0d2d52]">
+                  {item.name}
                 </h3>
                 <p className="mb-6 flex-1 text-[13.5px] leading-relaxed text-white/70 transition-colors duration-500 group-hover:text-[#6b7280]">
                   {item.desc}
