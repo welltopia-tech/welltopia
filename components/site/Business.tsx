@@ -102,6 +102,29 @@ export default function Business() {
             </motion.div>
           ))}
         </div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-60px" }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="mt-16 flex flex-col items-center text-center md:mt-20"
+        >
+          <p className="mb-4 text-[15px] font-medium tracking-wide text-[#1a4f8a]">
+            ＼ 共創力計ってますか？ ／
+          </p>
+          <Link
+            href="/co-creation-diagnosis"
+            className="block w-full max-w-xl rounded-2xl bg-gradient-to-br from-[#8fbbe0] to-[#1a4f8a] p-7 shadow-lg shadow-[#1a4f8a]/25 transition-transform hover:scale-[1.02] md:p-8"
+          >
+            <span className="block text-[22px] font-bold leading-snug text-white md:text-[26px]">
+              共創力をはかる →
+            </span>
+            <span className="mt-2 block text-[13px] font-light text-white/85">
+              ああああああ（仮置き）
+            </span>
+          </Link>
+        </motion.div>
       </div>
     </section>
   );
