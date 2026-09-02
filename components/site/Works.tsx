@@ -34,7 +34,7 @@ export default function Works() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-60px" }}
               transition={{ duration: 0.5, delay: i * 0.06 }}
-              className="grid grid-cols-1 gap-2 border-t border-white/10 py-8 transition-all hover:pl-3 md:grid-cols-[160px_1fr] md:gap-8 md:py-9"
+              className="group grid grid-cols-1 gap-2 border-t border-white/10 py-8 transition-all hover:pl-3 md:grid-cols-[160px_1fr] md:gap-8 md:py-9"
             >
               <div>
                 <span
@@ -52,6 +52,19 @@ export default function Works() {
                 >
                   {w.title}
                 </p>
+
+                {w.thumbnail && (
+                  <div className="grid grid-rows-[0fr] opacity-0 transition-[grid-template-rows,opacity] duration-500 ease-in-out group-hover:mb-5 group-hover:grid-rows-[1fr] group-hover:opacity-100">
+                    <div className="overflow-hidden">
+                      <img
+                        src={w.thumbnail}
+                        alt={w.title}
+                        className="aspect-[16/9] w-full max-w-md rounded-lg object-cover"
+                      />
+                    </div>
+                  </div>
+                )}
+
                 <p className="mb-4 text-[11.5px] text-white/50">{w.partners}</p>
 
                 {(w.service?.length || w.industry?.length || w.issues?.length) && (

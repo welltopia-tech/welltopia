@@ -3,6 +3,8 @@ export type WorkCase = {
   meta: string;
   title: string;
   partners: string;
+  /** 実績一覧でホバー時にアコーディオン表示するキービジュアル */
+  thumbnail?: string;
   /** どの事業に関連するプロジェクトか（未設定 = 事業横断） */
   business?: "co-creation-management" | "research" | "co-creation-manager";
   /** 活用したケイパビリティ（lib/data/capabilities.ts の en と対応） */
@@ -42,6 +44,7 @@ export const works: WorkCase[] = [
     meta: "JAPAN — 2025.07",
     title: "日韓越境体験 共創プロジェクト「81/82 ―ハチイチハチニ―」",
     partners: "共創パートナー｜FLYING JAPAN・ユニゾンシステムズ・terasu",
+    thumbnail: "/images/works/8182.jpg",
     business: "co-creation-management",
     capabilities: ["CO-CREATION DESIGN", "EXPERIENCE STRATEGY"],
     ccmPhases: ["CONNECT", "CREATE"],
@@ -55,6 +58,7 @@ export const works: WorkCase[] = [
     title: "発酵博覧会 国際共創プロジェクト「HAKKO EXPO & MARKET in LA」",
     partners:
       "雪国・新潟の発酵文化をテーマに、現地の来場者・料理関係者など約2,500名へ発信。共創パートナー｜SUZU GROUP・JACCC・terasu",
+    thumbnail: "/images/works/hakko-expo.jpg",
     business: "co-creation-management",
     capabilities: ["CO-CREATION DESIGN", "CREATIVE & COMMUNICATION"],
     ccmPhases: ["CONNECT", "IMPLEMENT"],
@@ -67,6 +71,7 @@ export const works: WorkCase[] = [
     meta: "JAPAN — 2024.11",
     title: "AED認知委員会「おもちゃAED トイこころ」開発",
     partners: "共創パートナー｜坂野電機工業所・スワニー・terasu",
+    thumbnail: "/images/works/toy-cocoro.jpg",
     business: "co-creation-management",
     capabilities: ["NEW VALUE INCUBATION", "CX DESIGN"],
     ccmPhases: ["CREATE", "IMPLEMENT"],
@@ -79,6 +84,7 @@ export const works: WorkCase[] = [
     meta: "JAPAN — 2026.03〜",
     title: "WELLTOPIA NIGHT プロジェクト",
     partners: "心地よさを軸にした共創コミュニティイベントを継続的に展開中。",
+    thumbnail: "/images/works/welltopia-night.jpg",
     service: ["コミュニティ運営"],
     industry: ["コミュニティ・イベント"],
   },
