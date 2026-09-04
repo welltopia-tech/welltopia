@@ -1,0 +1,76 @@
+"use client";
+
+import { useEffect, useState } from "react";
+import Link from "next/link";
+
+const navItems = [
+  { label: "About", href: "/aboutus" },
+  { label: "Business", href: "/business/co-creation-management" },
+  { label: "Works", href: "/works" },
+  { label: "News", href: "/news" },
+  { label: "Company", href: "/aboutus#company" },
+];
+
+export default function SiteHeader({
+  solid = false,
+  lightHero = false,
+}: {
+  solid?: boolean;
+  lightHero?: boolean;
+}) {
+  const [scrolled, setScrolled] = useState(solid);
+
+  useEffect(() => {
+    if (solid) return;
+    const onScroll = () => setScrolled(window.scrollY > 40);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, [solid]);
+
+  const dark = solid || scrolled;
+  const navy = lightHero && !dark;
+
+  return (
+    <header
+      className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 ${
+        dark ? "bg-[#0d2d52]/95 backdrop-blur-sm py-3.5" : "bg-transparent py-5"
+      }`}
+    >
+      <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-5 md:px-10">
+        <Link href="/" className="flex items-center gap-2.5">
+          <img
+            src={navy ? "/images/logo/welltopia-blue.png" : "/images/logo/welltopia-white.png"}
+            alt="WELLTOPIA"
+            className="h-20 w-auto md:h-[90px]"
+          />
+        </Link>
+
+        <nav className="hidden items-center gap-8 md:flex">
+          {navItems.map((item) => (
+            <Link
+              key={item.label}
+              href={item.href}
+              className={`text-[13px] tracking-wide transition-colors ${
+                navy ? "text-[#0d2d52]/75 hover:text-[#0d2d52]" : "text-white/80 hover:text-white"
+              }`}
+            >
+              {item.label}
+            </Link>
+          ))}
+        </nav>
+
+        <Link
+          href="/contact"
+          className={`rounded-md border px-5 py-2.5 text-[12.5px] tracking-wide transition-colors ${
+            navy
+              ? "border-[#0d2d52]/35 text-[#0d2d52] hover:border-[#0d2d52] hover:bg-[#0d2d52]/10"
+              : "border-white/40 text-white hover:border-white hover:bg-white/10"
+          }`}
+        >
+          お問い合わせ
+        </Link>
+      </div>
+    </header>
+  );
+}
