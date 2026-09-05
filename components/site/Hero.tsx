@@ -19,7 +19,11 @@ export default function Hero() {
     >
       <div className="fixed inset-0 -z-10 bg-[#0d2d52]">
         <div
-          className="absolute inset-0 bg-cover bg-center md:bg-[position:center_22%]"
+          className="absolute inset-0 bg-cover bg-center md:hidden"
+          style={{ backgroundImage: "url(/images/top/hero-mobile.jpg)" }}
+        />
+        <div
+          className="absolute inset-0 hidden bg-cover bg-[position:center_22%] md:block"
           style={{ backgroundImage: "url(/images/top/hero.jpg)" }}
         />
         <div
